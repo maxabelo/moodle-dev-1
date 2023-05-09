@@ -22,15 +22,22 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+//  https://docs.moodle.org/dev/Creating_a_theme_based_on_boost
 
 // This line protects the file from being accessed by a URL directly.
 defined('MOODLE_INTERNAL') || die();
 
-// A description shown in the admin theme selector.
-$string['choosereadme'] = 'Theme Adrian is a child theme of Boost. It adds the ability to upload background Adrians.';
+// This is the version of the plugin.
+$plugin->version = '2016102100';
 
-// The name of our plugin.
-$string['pluginname'] = 'Adrian';
+// This is the version of Moodle this plugin requires.                                                                              
+$plugin->requires = '2016070700';
 
-// We need to include a lang string for each block region.
-$string['region-side-pre'] = 'Right';
+// This is the component name of the plugin - it always starts with 'theme_'
+// for themes and should be the same as the name of the folder.
+$plugin->component = 'theme_adrian';		// nuestro theme name
+
+// This is a list of plugins, this plugin depends on (and their versions).                                                          
+$plugin->dependencies = [
+	'theme_boost' => '2016102100'
+];
