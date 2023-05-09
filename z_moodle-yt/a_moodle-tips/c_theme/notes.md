@@ -72,13 +72,50 @@
 
 		-- URL:
 			- Creating a theme based on boost:		https://docs.moodle.org/dev/Creating_a_theme_based_on_boost
-			- Settings thel child theme:			https://docs.moodle.org/dev/Creating_a_theme_based_on_boost#Duplicate_the_settings_from_Boost
+			- SETTINGS thel child theme:			https://docs.moodle.org/dev/Creating_a_theme_based_on_boost#Duplicate_the_settings_from_Boost
 
 
 
 
 
 
+
+
+##  How to override a template in Moodle
+- --- Recordar q el   theme    es quien tiene la ultima palabra de como va a lucir 1 page
+  - Antes de Sobrescribir la forma de 1 Output/Cuadro, debemos Entender q es un     TEMPLATE
+    - El template es la forma en q Moodle genera el HTML sin tener q mezclarlo con php
+    - NO modificar el core de moodle, sino q   @Overrige   /  Sobrescribirlo   con un template
+
+	- Se busca intensamente cual puede ser el    template    q tiene la funcionalidad q queremos alterar, en este caso con la update, moodle dejo eso en el    lib, x lo cual NO me funca
+  	- Si esta en blocks y se llama    myoverview
+    	- Simplemente copiamos ese   template   en nuestro plugins en:
+      	- /templates/nameblock_origin/file.mustache
+
+
+		-- URL:
+			- Template: 		https://moodledev.io/docs/guides/templates
+
+
+
+
+
+
+
+
+
+
+## how to override a renderer
+- --- Vamos a ver como hacer   @Override    de  1 Renderer
+	- EN lugar de sobrescribir la Plantilla o Template, podemos sobrescribir su Renderer q se encarga de los calculos y de hacer    display   del content
+
+	- 1 Renderer es 1   Class   q contiene toda la logica para desplegar en html
+  	- Sus methods retornan html as string
+  	- Pilas con el nombre de la clase del    renderer    con la q vamos a sobrescribir
+
+
+		-- URL:
+			- Override al   renderer:     https://docs.moodle.org/dev/Overriding_a_renderer
 
 
 
