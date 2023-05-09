@@ -31,28 +31,32 @@ class filter_imagenes extends moodle_text_filter {
 	public function filter($text, array $options = array()) {
 		global $CFG;
 		
-		if (!empty($CFG->filter_imagenes_ok)) {
-			$okpicurl = new moodle_url('/pix/t/check.png');	// acceder a 1 archivo de moodle con la url
-			$ok = html_writer::tag('img', '',			// build html como recomienda moodle - otra es mustache
-				array('src' => $okpicurl, 'alt' => 'ok'));
-
-			$text = str_replace('@ok@', $ok, $text);
+		if (!empty($CFG->filter_imagenes_centauro)) {
+			$picurl = new moodle_url('/filter/imagenes/pix/centauro.jpg'); // acceder a 1 archivo de moodle con la url
+			$pic = html_writer::tag('img', '', 	// build html como recomienda moodle - otra es mustache
+							array('src' => $picurl, 'alt' => 'Centauro'));
+			$text = str_replace('@centauro@', $pic, $text);
 		}
 
-		if (!empty($CFG->filter_imagenes_cross)) {
-			$crosspicurl = new moodle_url('/pix/t/delete.png');
-			$cross = html_writer::tag('img', '', 
-							array('src' => $crosspicurl, 'alt' => 'cross'));
-
-			$text = str_replace('@cross@', $cross, $text);
+		if (!empty($CFG->filter_imagenes_fenix)) {
+			$picurl = new moodle_url('/filter/imagenes/pix/fenix.jpg');
+			$pic = html_writer::tag('img', '', 
+							array('src' => $picurl, 'alt' => 'Ave Fénix'));
+			$text = str_replace('@fenix@', $pic, $text);
 		}
 
-		if (!empty($CFG->filter_imagenes_award)) {
-			$awardpicurl = new moodle_url('/pix/t/award.png');
-			$award = html_writer::tag('img', '', 
-							array('src' => $awardpicurl, 'alt' => 'award'));
+		if (!empty($CFG->filter_imagenes_gargola)) {
+			$picurl = new moodle_url('/filter/imagenes/pix/gargola.png');
+			$pic = html_writer::tag('img', '', 
+							array('src' => $picurl, 'alt' => 'La gárgola'));
+			$text = str_replace('@gargola@', $pic, $text);
+		}
 
-			$text = str_replace('@award@', $award, $text);
+		if (!empty($CFG->filter_imagenes_pegaso)) {
+			$picurl = new moodle_url('/filter/imagenes/pix/pegaso.jpg');
+			$pic = html_writer::tag('img', '', 
+							array('src' => $picurl, 'alt' => 'El pegaso'));
+			$text = str_replace('@pegaso@', $pic, $text);
 		}
 		
 		return $text;
