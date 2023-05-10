@@ -373,3 +373,63 @@ if ($iscourseorcategoryitem && $usesscaleorvalue) {
 
 
 
+
+
+
+
+
+
+
+		<!-- URL al perfil -->
+		$url = new moodle_url('/user/profile.php?id=' . $user->id);
+		$content .= html_writer::link($url, $user->firstname . $user->lastname);
+
+		<!-- Get users -->
+		https://moodle.org/mod/forum/discuss.php?d=118532
+
+
+
+ public function get_content()
+    {
+        global $DB, $COURSE;
+
+        if ($this->content !== NULL) {
+            return $this->content;
+        }
+
+        $content = '';
+
+        $showcourses = get_config('block_testblock', 'showcourses');
+
+        if ($showcourses) {
+            $courses = $DB->get_records('course');
+            foreach ($courses as $course) {
+                $content .= $course->fullname . '<br>';
+            }
+        } else {
+            $context = context_course::instance($COURSE->id);
+
+            $users = get_enrolled_users($context);
+
+            foreach ($users as $user) {
+                // Obtiene los roles del usuario en el contexto del curso actual
+                $roles = get_user_roles($context, $user->id);
+                
+                if($user->id == 102) {
+                    echo "<pre>";
+                    print_r($roles);
+                    echo "</pre>";
+                    die();
+                }
+
+                // Verifica si el usuario tiene el rol de "teacher"
+                    $content .= $user->id . $user->firstname . ' ' . $user->lastname . '<br>';
+            }
+        }
+
+        $this->content = new stdClass();
+        $this->content->text = $content;
+        $this->content->footer = 'This is the footer';
+
+        return $this->content;
+    }
