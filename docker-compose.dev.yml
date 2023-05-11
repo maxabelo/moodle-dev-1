@@ -10,7 +10,7 @@ services:
       - MARIADB_CHARACTER_SET=utf8mb4
       - MARIADB_COLLATE=utf8mb4_unicode_ci
     volumes:
-      - 'mariadb_moodle:/bitnami/mariadb'
+      - 'mariadb_moodle_rt1:/bitnami/mariadb'
     ports:
       - '3306:3306'
 
@@ -27,8 +27,9 @@ services:
       - MOODLE_DATABASE_NAME=bitnami_moodle
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
-      - 'moodle_data_m1:/bitnami/moodle'
-      - 'moodledata_data_m1:/bitnami/moodledata'
+      - 'moodle_data_rt1:/bitnami/moodle'
+      - 'moodledata_data_rt1:/bitnami/moodledata'
+      - './z_data-volume:/home/data-host'
     depends_on:
       - mariadb
 
@@ -42,10 +43,20 @@ services:
     depends_on:
       - mariadb
 
+# ## docker repasos
+# volumes:
+#   mariadb_moodle:
+#     external: true
+#   moodle_data_m1:
+#     external: true
+#   moodledata_data_m1:
+#     external: true
+
+# ## real tasks1
 volumes:
-  mariadb_moodle:
+  mariadb_moodle_rt1:
     external: true
-  moodle_data_m1:
+  moodle_data_rt1:
     external: true
-  moodledata_data_m1:
+  moodledata_data_rt1:
     external: true
