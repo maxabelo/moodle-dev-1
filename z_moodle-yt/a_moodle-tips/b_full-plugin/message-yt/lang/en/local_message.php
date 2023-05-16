@@ -15,21 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'local_message', language 'en'
- * 
+ * Cadenas de idioma 'en'
+ *
  * @package   local_message
- * @copyright 2023, Adrian Changalombo <your@email.address>
+ * @copyright 2023 Adrian
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Broadcast messages';
 $string['enter_message'] = 'Please enter a message';
 $string['message_label'] = 'Messate Text';
 $string['message_type'] = 'Message Type';
 $string['message_created'] = 'You created a message with title: ';
-$string['updated_form'] = 'You updated a message with title: ';
 $string['cancelled_form'] = 'You cancelled the message form';
 $string['manage_messages'] = 'Manage messages';
-$string['delete_message'] = 'Delete message';
-$string['delete_message_confirm'] = 'Are you sure you want to delete message?';
-

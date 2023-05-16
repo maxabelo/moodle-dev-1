@@ -15,31 +15,42 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   local_message
- * @copyright 2023, Adrian Changalombo <your@email.address>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Version details
+ *
+ * @package    local_message
+ * @copyright  2023 Adrian
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+
+// asegura 1 moodle esta configurado y nos Habilita los Objetos Globales, como es  page debemos habilitarlo
 require_once(__DIR__ . '/../../config.php');
 
-global $DB;
+global $DB; // x el config no hace falta la ref a page y output
 
+// require_login();
+// $context = context_system::instance();
+
+// https://docs.moodle.org/dev/Page_API#.24PAGE_The_Moodle_page_global
 $PAGE->set_url(new moodle_url('/local/message/manage.php'));
 $PAGE->set_context(\context_system::instance());
 $PAGE->set_title(get_string('manage_messages', 'local_message'));
-// js
-$PAGE->requires->js_call_amd('local_message/confirm');
 
-$messages = $DB->get_records('local_message', null, 'id');
+$messages = $DB->get_records('local_message');
 
-echo $OUTPUT->header();
 
-$templatecontext = (object)[
-    'messages' => array_values($messages),
-    'editurl' => new moodle_url('/local/message/edit.php'),
+// // // Establecer el Output del HTML con el   Moodle Core Output
+echo $OUTPUT->header();		// desplega el header
+
+
+// // Display 1 Template de   Mustache
+// context son variables q pasamos al template
+$templatecontext = (object) [
+	'messages' => array_values($messages),  // modifica los index del arr para q los coja bien mustache
+	'editurl' => new moodle_url('/local/message/edit.php')
 ];
-
-// render mustache template
 echo $OUTPUT->render_from_template('local_message/manage', $templatecontext);
 
+
 echo $OUTPUT->footer();
+

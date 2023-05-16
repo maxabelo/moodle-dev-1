@@ -15,13 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   local_message
- * @copyright 2023, Adrian Changalombo <your@email.address>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Version details
+ *
+ * @package    local_message
+ * @copyright  2023 Adrian
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
+
 $plugin->component = 'local_message';
-$plugin->version = 2023050302;
-$plugin->requires = 2022112803; // Moodle 4.0.
+$plugin->version = 2022112800;
+$plugin->requires = 2022111800;

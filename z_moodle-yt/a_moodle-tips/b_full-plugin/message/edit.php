@@ -15,58 +15,69 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details
- *
- * @package    local_message
- * @copyright  2023 Adrian
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_message
+ * @copyright 2023, Adrian Changalombo <your@email.address>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use local_message\form\edit;
+use local_message\manager;
 
 require_once(__DIR__ . '/../../config.php');
-require_once($CFG->dirroot . '/local/message/classes/form/edit.php');
 
-global $DB;  // w with db
+global $CFG, $DB;
 
 $PAGE->set_url(new moodle_url('/local/message/edit.php'));
 $PAGE->set_context(\context_system::instance());
 $PAGE->set_title('Edit');
 
+// for editing purposes
+$messageid = optional_param('messageid', null, PARAM_INT);
 
-// // // We want to display OUR form
-// $mdorm = new tool_licencemanager\form\edit_license();	// moodle ford
-// Instantiate the myform form from within the plugin.
-// $mform = new \local_message\form\edit();
+// We want to display our form.
 $mform = new edit();
-
-
-
 
 // Form processing and displaying is done here.
 if ($mform->is_cancelled()) {
-	// go back to manage page - Nunca tener 1  echo $OUTPUT  antes de 1 redirect
-	redirect($CFG->wwwroot . '/local/message/manage.php', get_string('cancelled_form', 'local_message'));
-} else if ($fromform = $mform->get_data()) {
- 	// When the form is submitted, and the data is successfully validated, the   `get_data()`  fn will return the data posted in the form.
+    // Go back to manage.php page
+    redirect($CFG->wwwroot . '/local/message/manage.php', get_string('cancelled_form', 'local_message'));
+} else if ($fromform = $mform->get_data()) { // successfully submitted
+    $manager = new manager();
 
- 	// insert data into our db table - debemos crear la  row  entera como obj
-	$recordtoinsert = new stdClass();
-	$recordtoinsert->messagetext = $fromform->messagetext;
-	$recordtoinsert->messagetype = $fromform->messagetype;
+    if ($fromform->id) {
+        // update message
+        $manager->update_message($fromform->id, $fromform->messagetext, $fromform->messagetype);
 
-	$DB->insert_record('local_message', $recordtoinsert);
+        redirect(
+            $CFG->wwwroot . '/local/message/manage.php',
+            get_string('updated_form', 'local_message')
+                . $fromform->messagetext
+        );
+    }
 
-	redirect($CFG->wwwroot . '/local/message/manage.php', get_string('message_created', 'local_message')
-			. $fromform->messagetext
-	);
+    $manager->create_message($fromform->messagetext, $fromform->messagetype);
+
+    redirect(
+        $CFG->wwwroot . '/local/message/manage.php',
+        get_string('message_created', 'local_message')
+            . $fromform->messagetext
+    );
 }
 
+// edit message by id 
+if ($messageid) {
+    // fill form input
+    $manager = new manager();
+    $message = $manager->get_message($messageid);
+    if (!$message) {
+        throw new invalid_parameter_exception('Message not found');
+    }
 
+    $mform->set_data($message);
+}
 
-echo $OUTPUT->header();		// desplega el header
-
+echo $OUTPUT->header();
 
 $mform->display();
 
 echo $OUTPUT->footer();
-
