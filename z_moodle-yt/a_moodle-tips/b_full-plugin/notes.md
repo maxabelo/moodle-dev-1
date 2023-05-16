@@ -522,7 +522,7 @@
 ## Adding a link to the manage page from admin settings
 - --- Para poder acceder a estas pages q acabmos de crear vamos a hacerlo a traves del Navigation
   - Asi q usaremos el       Navigation API       de Moodle
-    - Debemos crear el      settinfs.php       en el root del plugin
+    - Debemos crear el      	`settinfs.php`         en el root del plugin
 
 	- -- Como esta page NO es propia de Moodle, es una      External Page       , debemos establecer la config para este tipo de      external page     
   	- Por eso usamos el     admin_externalpage     de moodle
@@ -537,6 +537,25 @@
 			```
 
   	- Gracas al     add('localplugins')      es q se coloca el enlace en el site admin > plugins > local
+
+
+
+
+
+
+
+
+## How to add a settings page in moodle
+- --- Segimos W sobre el       `settings.php`      
+  - Para q tenga pagina de settings
+    - Lo nuevo fue agregar 1 category  q agrupa los enlaces de este plugin
+      - Tanto al externo como al proopio settings page de moodle q creamos en el   settings.php
+
+
+
+
+
+
 
 
 
