@@ -455,7 +455,7 @@
 
 
 
-## Creating an external function
+## Creating an EXTERNAL FUNCTION		<-   Api a consumir
 - --- En Moodle lo referente a llamadas     AJAX    es denominado     External Function
   - Estos      services      se crean en el dir    /db     en      services.php
 
@@ -501,10 +501,42 @@
 
 
 ## Use external functions in AJAX Call
-- --- s
+- --- Desde nuestro JS llamamos a esta      external function     para consumi esa "api" entre comillas
+  - Usamos JQuery y AJAX para hacer estas llamadas
+	- Debemos construir la     request      hacia el method q definimos en el       `db/services.php`
+		- En este caso a este method     	  local_message_delete_message
 
 
 
+
+
+
+
+
+
+
+
+
+
+# How to handle permissions, roles, and capabilities in moodle
+## Adding a link to the manage page from admin settings
+- --- Para poder acceder a estas pages q acabmos de crear vamos a hacerlo a traves del Navigation
+  - Asi q usaremos el       Navigation API       de Moodle
+    - Debemos crear el      settinfs.php       en el root del plugin
+
+	- -- Como esta page NO es propia de Moodle, es una      External Page       , debemos establecer la config para este tipo de      external page     
+  	- Por eso usamos el     admin_externalpage     de moodle
+		 	```php
+				if ($hassiteconfig) { // needs this condition or there is error on login page
+					$ADMIN->add(
+						'localplugins',
+						new admin_externalpage('local_message', get_string('pluginname', 'local_message'),
+						$CFG->wwwroot . '/local/message/manage.php')
+					);
+				}
+			```
+
+  	- Gracas al     add('localplugins')      es q se coloca el enlace en el site admin > plugins > local
 
 
 
