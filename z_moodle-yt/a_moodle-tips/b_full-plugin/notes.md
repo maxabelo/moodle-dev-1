@@ -550,8 +550,30 @@
   - Para q tenga pagina de settings
     - Lo nuevo fue agregar 1 category  q agrupa los enlaces de este plugin
       - Tanto al externo como al proopio settings page de moodle q creamos en el   settings.php
+	- Configuramos este     settings.php      para poder tener settings del plugin
+  	- Agrupamos en 1    group   varios enlaces, 1 externo a la pagina antes creada y otro interno a la pagina propia de settings de nuestro plugin
 
 
+
+
+
+
+
+
+## Implement permission: require admin role to manage messages
+- --- Nuestras paginas estan expuestas y son accesibles x url a todo el mundo
+  - Esto, dado q son pages de manage, deben ser limitadas a solo el Admin
+  	- X tanto establecemos la validacion de q sea admin quien las visita:
+      	`require_admin();`
+	- De esta manera protegemos nustras custom pages.
+`
+
+
+
+
+
+## How to add a new capability in moodle
+- ---
 
 
 
