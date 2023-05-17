@@ -566,16 +566,52 @@
   	- X tanto establecemos la validacion de q sea admin quien las visita:
       	`require_admin();`
 	- De esta manera protegemos nustras custom pages.
-`
+		- Pero esto NOO es flexible, esto valida q sea admin y nada mas
+		- No permite otros roles
+
+
 
 
 
 
 
 ## How to add a new capability in moodle
-- ---
+- --- Para ser mas flexibles a la hora de permitir acciones basado en las      	`Capabilities`      debemos crear el     access.php     q esta en     /db
 
 
+	- -- Creamos el       `access.php`       en /db
+  	- Con esto creamos 1 nueva      capability      con la q podemos hacer validaciones y limitar accesos
+    	- NUNCA validamos el ROLE, Siempre validamos las      capabilities
+		- Una vez creamos las capabilities, para q se apliquen debemos hacer el      Upgrade de Moodle DB
+  		- Para lo cual, procedemos a cambiar la version del plugin para reinstalarlo
+		- Tras reinstalarlo nos vamos a 
+  		- En donde para el Manager vemos q x default se activa esta Nueva Capability q acabamos de crear
+    		- Se setea en auto xq en este    access.php    se lo establecimos al     archetypes    manager
+					http://localhost/admin/roles/manage.php
+
+  
+	- -- Ahora q ya lo tenemos lo vamos a validar en las paginas q queramos proteger:
+  	- Para esta validacion requerimos el    context
+    	- En este caso no usamos 1 context especifico como el de curse
+      	- Sino q nos fuimos a lo mas general
+  	- Y usar el    require_capability
+
+		```php
+			$context = context_system::instance();  // generic context
+			require_capability('local/message:managemessages', $context);
+		```
+
+		- Ojo, q Admin Si tiene todas las    capabilities    , asi q no hace falta allow a el
+
+
+			- -- Tambien lo implementamos en el     `externallib.php`
+  			- Para q No pueda eliminar si NO tiene esta capability
+  			- De esta forma protegemos incluso nuestra     external function
+
+
+
+			-- URL:
+					https://moodledev.io/docs/apis/subsystems/access#how-to-define-new-capabilities-in-plugins
 
 
 
