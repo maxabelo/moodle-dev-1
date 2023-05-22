@@ -16,14 +16,12 @@ services:
       - mysql_moodle:/var/lib/mysql
 
   phpmyadmin:
-    image: phpmyadmin
-    restart: always
-    ports:
-      - 8080:80
+    image: phpmyadmin/phpmyadmin
     environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: your_root_password
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+    ports:
+      - '8081:80'
     depends_on:
       - mysql
 
