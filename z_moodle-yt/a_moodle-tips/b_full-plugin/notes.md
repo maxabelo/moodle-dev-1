@@ -629,6 +629,34 @@
 
 
 
+# Creating a dynamic form
+## Create a dynamic form definition
+- --- Vamos a crear 1 Form q nos permita editar varios messages a la vez
+	- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
