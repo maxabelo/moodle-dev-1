@@ -15,11 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Adds admin settings for the plugin.
+ * 
  * @package   local_message
  * @copyright 2023, Adrian Changalombo <your@email.address>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+//  https://moodledev.io/docs/apis/subsystems/admin#settings-file-example
 defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) { // needs this condition or there is error on login page

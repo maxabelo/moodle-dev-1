@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version metadata for the block_mycourselist plugin.
+ * Block definition class for the block_mycourselist plugin.
  *
  * @package   block_mycourselist
  * @copyright 2023, Adrian Changalombo <adrian@email.com>
