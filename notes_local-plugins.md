@@ -167,7 +167,7 @@ array('class'=>'generaltable', 'id'=>'mytable')); ?>
 
 		-- Caracteristicas Estandar del Complemento:
 			- version.php		version del script q debe incrementarse despues d los cambios
-			- install.xml		ejecutado durante la instalacion
+			- install.xml		ejecutado durante la instalacion <- tablas de DB
 			- /db/install.php		ejecutado despues del  install.xml
 			- /db/upgrade.php		ejecutado despues del cambio de    version.php
 			- /db/access.php		definicion de capacidades (roles)
