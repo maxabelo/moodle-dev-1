@@ -475,7 +475,7 @@
     	- params q recibe
     	- lo q retorna
     	- la implementacion de esta    external fn
-		- 
+	- External para los External Web Services (API REST) de Moodle
 
 				https://moodledev.io/docs/apis/subsystems/external/writing-a-service#write-the-external-function-descriptions
 

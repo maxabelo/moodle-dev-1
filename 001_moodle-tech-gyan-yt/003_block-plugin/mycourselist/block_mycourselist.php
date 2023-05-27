@@ -43,7 +43,12 @@ class block_mycourselist extends block_base
      */
     public function get_content()
     {
-        global $DB, $CFG, $USER;
+        global $DB, $PAGE;
+
+        // js & css
+        $PAGE->requires->js('/blocks/mycourselist/js/jquery-3.7.0.js');
+        $PAGE->requires->js('/blocks/mycourselist/js/main.js');
+        $PAGE->requires->css('/blocks/mycourselist/css/somecss.css');
 
         if ($this->content !== null) {
             return $this->content;
@@ -62,8 +67,8 @@ class block_mycourselist extends block_base
             $courses = $DB->get_records_sql($sql, [1]);
             // $courses = get_courses();
 
-            $table = "<table class=\"mycourselist-table\"><tbody>";
-            $table .= "<tr>
+            $table = "<table class='mycourselist-table'><tbody>";
+            $table .= "<tr class='table-header'>
                 <th>" . get_string('srn', 'block_mycourselist') . "</th>
                 <th>" . get_string('course_name', 'block_mycourselist') . "</th>
                 <th>" . get_string('course_id', 'block_mycourselist') . "</th>
@@ -78,10 +83,24 @@ class block_mycourselist extends block_base
                     <td>" . $course->idnumber . "</td>
                 </tr>";
             }
+            $table .= "</tbody></table>";
 
-            $table .= "</table></tbody>";
+            $text = '';
+            $filter1 = '
+            <div class="filter">
+            <span class="header"> Course Status:  </span>
+            <select name="status" id="status">
+                <option value="-1">All</option>
+                <option value="1">Active</option>
+                <option value="0">Deactivate</option>
+            </select>
+            </div>
+            ';
+            $text .= $filter1;
 
+            $text .= "<div class='resultset'>";
             $text .= $table;
+            $text .= "</div>";
 
             $this->content->text = $text;
         }
