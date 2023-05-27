@@ -43,6 +43,35 @@
 
 
 
+- --- Multiple Instance
+  - X default Moodle NOO permite el       instance_multiple      , ya q Solo permite agregar el block plugin 1 sola vez  en el       applicable_formats      q hayamos permitido
+  - Pero, si agregamos este method en el       blocktype_pluginname.php      q esta en el root del plugin, avilitaremos la multiple instanciacion del plugin, o lo q es lo mismo, permitiremos tener +1 vez el plugin en el       applicable_formats      q hayamos habilitado
+      `instance_allow_multiple()`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

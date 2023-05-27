@@ -104,4 +104,11 @@ class block_mycourselist extends block_base
             'my' => true,
         ];
     }
+
+    // // allow multiple instances
+    // https://moodledev.io/docs/apis/plugintypes/blocks#instance_allow_multiple
+    public function instance_allow_multiple()
+    {
+        return true;
+    }
 }
