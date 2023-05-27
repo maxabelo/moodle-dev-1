@@ -15,13 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version metadata for the block_mycourselist plugin.
+ * Plugin strings are defined here.
  *
  * @package   block_mycourselist
+ * @category  string
  * @copyright 2023, Adrian Changalombo <adrian@email.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'My course list';
+$string['pluginname'] = 'List All Courses';
+$string['pluginname_display'] = 'Courses List';
+$string['srn'] = 'Sr. No';
+$string['course_name'] = 'Course name';
+$string['course_id'] = 'Course ID';

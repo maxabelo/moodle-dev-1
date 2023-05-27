@@ -30,6 +30,13 @@
 
 
 
+- --- `styles.css`
+  - Este archivo va en el     root     del plugin
+  - Debe llamarse asi y ya esta, moodle lo reconoce de inmediato
+  - Asi damos estilos css a nuestros Plugins
+
+
+
 
 
 

@@ -43,12 +43,48 @@ class block_mycourselist extends block_base
      */
     public function get_content()
     {
+        global $DB, $CFG, $USER;
+
         if ($this->content !== null) {
             return $this->content;
         }
 
         $this->content = new stdClass();
+        $this->content->items = [];
+        $this->content->icons = [];
         $this->content->footer = 'Footer';
+
+        if (!empty($this->config->text)) {
+            $this->content->text = 'Hello World';
+        } else {
+            // // query
+            $sql = "SELECT * FROM mdl_course WHERE id != ?";
+            $courses = $DB->get_records_sql($sql, [1]);
+            // $courses = get_courses();
+
+            $table = "<table class=\"mycourselist-table\"><tbody>";
+            $table .= "<tr>
+                <th>" . get_string('srn', 'block_mycourselist') . "</th>
+                <th>" . get_string('course_name', 'block_mycourselist') . "</th>
+                <th>" . get_string('course_id', 'block_mycourselist') . "</th>
+            </tr>";
+
+            $counter = 1;
+
+            foreach ($courses as $course) {
+                $table .= "<tr>
+                    <td>" . $counter++ . "</td>
+                    <td>" . $course->fullname . "</td>
+                    <td>" . $course->idnumber . "</td>
+                </tr>";
+            }
+
+            $table .= "</table></tbody>";
+
+            $text .= $table;
+
+            $this->content->text = $text;
+        }
 
         return $this->content;
     }
