@@ -1,0 +1,103 @@
+{
+	"uuid":"3d6dce8d-7d66-4121-b031-61faeb19430f",
+	"fired_at":"2019-08-24T14:15:22Z",
+	"institution":{
+	   "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+	   "name":"FUNIBER"
+	},
+	"grade":{
+	   "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+	   "value":9.5,
+	   "status":"approved",
+	   "creation_date":"2019-08-24T14:15:22Z",
+	   "change_date":"2019-08-24T14:15:22Z",
+	   "student":{
+		  "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+		  "name":"Maria Jose",
+		  "last_name":"Bravo Farias",
+		  "login":"SNDODP4006400"
+	   },
+	   "subject":{
+		  "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+		  "name":"Test course: S",
+		  "abbreviation":"CDS008",
+		  "version":"CDS008-vEA"
+	   },
+	   "grades":[
+		  {
+			 "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+			 "value":8.3,
+			 "status":"approved",
+			 "creation_date":"2019-08-24T14:15:22Z",
+			 "change_date":"2019-08-24T14:15:22Z",
+			 "activity":{
+				"type":"_EXAMEN",
+				"abbreviation":null,
+				"name":"Sistema de Convocatoria"
+			 },
+			 "grades":[
+				{
+				   "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+				   "value":8.3,
+				   "status":"approved",
+				   "creation_date":"2019-08-24T14:15:22Z",
+				   "change_date":"2019-08-24T14:15:22Z",
+				   "activity":{
+					  "type":"_TEST_PRIMARIO",
+					  "abbreviation":"CDS008-E1",
+					  "name":"Convocatoria Ordinaria"
+				   },
+				   "grades":[
+					  {
+						 "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+						 "notatki":{
+							"reference":"2ddb20b8-e0e3-45ae-a638-42610b990a6a",
+							"campus_reference":"1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+						 },
+						 "value":8.3,
+						 "status":"approved",
+						 "creation_date":"2019-08-24T14:15:22Z",
+						 "change_date":"2019-08-24T14:15:22Z",
+						 "activity":{
+							"type":"_FORO",
+							"abbreviation":"CDS008-E1-AF",
+							"name":"Actividad de Foro"
+						 }
+					  },
+					  {
+						 "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+						 "notatki":{
+							"reference":"2ddb20b8-e0e3-45ae-a638-42610b990a6a",
+							"campus_reference":"5aa9d786-c6fe-4d3b-a2ac-f3e39b53c9bb"
+						 },
+						 "value":8.3,
+						 "status":"approved",
+						 "creation_date":"2019-08-24T14:15:22Z",
+						 "change_date":"2019-08-24T14:15:22Z",
+						 "activity":{
+							"type":"_PRACTICA",
+							"abbreviation":"CDS008-E1-APr",
+							"name":"Actividad de Practica"
+						 }
+					  },
+					  {
+						 "uuid":"095be615-a8ad-4c33-8e9c-c7612fbf6c9f",
+						 "notatki":null,
+						 "value":8.3,
+						 "status":"approved",
+						 "creation_date":"2019-08-24T14:15:22Z",
+						 "change_date":"2019-08-24T14:15:22Z",
+						 "activity":{
+							"type":"_Examen",
+							"abbreviation":"CDS008-E1-AE",
+							"name":"Examen"
+						 }
+					  }
+				   ]
+				}
+			 ]
+		  }
+	   ]
+	}
+ }
+
