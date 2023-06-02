@@ -12,7 +12,8 @@ services:
     volumes:
       - 'mariadb_moodle_rt1:/bitnami/mariadb'
     ports:
-      - '3306:3306'
+      # - '3306:3306'
+      - '3366:3306'
 
 
   moodle:
@@ -30,6 +31,7 @@ services:
       - 'moodle_data_rt1:/bitnami/moodle'
       - 'moodledata_data_rt1:/bitnami/moodledata'
       - './z_data-volume:/home/data-host'
+      # - './z_moodlee:/bitnami'
     depends_on:
       - mariadb
 
