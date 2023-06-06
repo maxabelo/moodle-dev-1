@@ -225,4 +225,38 @@
 
 
 
+ # # ### DB
+ # # website:
+ # https://team-accion.ctdesarrollo.org/adrian-changalombo/campus
+ 
+ # # token
+ # 198d648f589bd12d2137cfe1f1b90810
+ 
+ # # campus_UUID <- subject id number
+ # 095be615-a8ad-4c33-8e9c-c7613fbf5c9f
+ 
+ # # STUDENT uuid <- id number
+ # 093be625-a8ad-4c33-8e8c-c7612fbf6c6f
+ # 060be625-a8ad-4c33-8e8c-c7924fbf9c9f
+ 
+ 
+ 
+
+
+// Postman Request
+POST:				http://localhost/campus/webservice/rest/server.php
+wstoken				c9e367b2bbbde93e1a9cb20342d9a988
+wsfunction			block_course_view_finalized_course
+moodlewsrestformat	json
+user[idnumber]		070be625-a8ad-0c33-8e8c-c7825fbf2c1f
+course[idnumber]	095be615-a8ad-4c33-8e9c-c7613fbf5c9f||CDS008-vEA
+state				_APPROVED
+ 
+
+
+// get $CFG from JS
+ M.cfg.sesskey
+
+
+
 
