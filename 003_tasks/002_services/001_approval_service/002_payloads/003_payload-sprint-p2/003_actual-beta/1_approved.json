@@ -1,0 +1,130 @@
+{
+	"app_id": "sg.funiber.beta",
+
+
+			"uuid": "a6914d05-a6a9-4645-8733-e8ac5252e634",
+
+
+	"fired_at": "2023-06-09T21:32:26.457400Z",
+	
+	"institution": {
+
+
+	  		"uuid": "5dc2c983-3932-5bc7-b246-dc5f088c212e",
+
+
+	  "name": "FUNIBER"
+	},
+
+	"grade": {
+	  "uuid": "aad18b27-2dae-450c-965b-ccb3c5b6a664",
+  
+  
+	  			"value": "9.40",
+				"status": "approved",
+  
+  
+	  "creation_date": "2023-06-09T21:11:25.000000Z",
+	  "change_date": "2023-06-09T21:32:25.000000Z",
+
+	  "subject": {
+  
+		  
+				"uuid": "12c092c6-9524-5ce9-9acf-725e8ab81166",
+				"abbreviation": "TR046",
+  
+  
+		"name": "Gesti\u00f3n Estrat\u00e9gica de los Recursos Humanos",
+		"version": "TR046-vEA"
+	  },
+
+	  "student": {
+
+				"uuid": "4de082f6-906e-59da-bc18-68e10dcceb89",
+
+
+		"first_name": "Estudiante",
+		"last_name": "Acci\u00f3n Docente",
+		"login": "ECMDGDP5315398"
+	  },
+	  "grades": [
+		{
+		  "uuid": "68315087-b767-4d0d-84d0-b108c4b516bf",
+		  "value": "9.40",
+		  "status": "approved",
+		  "creation_date": "2023-06-09T21:11:24.000000Z",
+		  "change_date": "2023-06-09T21:32:25.000000Z",
+		  "activity": {
+			"type": "_EXAMEN",
+			"name": "Sistema de Evaluaci\u00f3n",
+			"abbreviation": ""
+		  },
+		  "grades": [
+			{
+			  "uuid": "a794fc2c-64d0-47c0-8885-1d8489a5917c",
+			  "value": "9.40",
+			  "status": "approved",
+			  "creation_date": "2023-06-09T21:11:24.000000Z",
+			  "change_date": "2023-06-09T21:32:25.000000Z",
+			  "activity": {
+				"type": "_TEST_PRIMARIO",
+				"name": "Convocatoria ordinaria",
+				"abbreviation": "TR046-E1"
+			  },
+			  "grades": [
+				{
+				  "uuid": "ddc00ae6-2138-4024-a5d8-7f22e1820958",
+				  "value": "9.00",
+				  "status": "approved",
+				  "creation_date": "2023-06-09T21:11:25.000000Z",
+				  "change_date": "2023-06-09T21:32:25.000000Z",
+				  "notatki": {
+					"reference": "2b0a672b-0ab8-44cb-ab97-10b9bd5d2bad",
+					"campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+				  },
+				  "activity": {
+					"type": "_FORO",
+					"name": "Actividad de foro",
+					"abbreviation": "TR046-E1-AF"
+				  }
+				},
+				{
+				  "uuid": "6be1c3e1-7c14-4367-8764-1c5ce25a8f2a",
+				  "value": "10",
+				  "status": "approved",
+				  "creation_date": "2023-06-09T21:11:24.000000Z",
+				  "change_date": "2023-06-09T21:11:24.000000Z",
+				  "notatki": {
+					"reference": "2c00aaac-d4d0-4b2b-9eca-7af5458efc40",
+					"campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+				  },
+				  "activity": {
+					"type": "_PRACTICA",
+					"name": "Actividad pr\u00e1ctica",
+					"abbreviation": "TR046-E1-APr"
+				  }
+				},
+				{
+				  "uuid": "666fff07-251f-4e85-bd21-0dfba3b9e737",
+				  "value": "9.00",
+				  "status": "approved",
+				  "creation_date": "2023-06-09T21:11:24.000000Z",
+				  "change_date": "2023-06-09T21:11:24.000000Z",
+				  "notatki": {
+					"reference": "45eaa159-8484-4207-b251-c63f94b0ce41",
+					"campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+				  },
+				  "activity": {
+					"type": "_EXAMEN",
+					"name": "Examen",
+					"abbreviation": "TR046-E1-AE"
+				  }
+				}
+			  ]
+			}
+		  ]
+		}
+	  ]
+	}
+  }
+  

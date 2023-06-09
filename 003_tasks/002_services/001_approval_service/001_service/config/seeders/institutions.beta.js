@@ -2,10 +2,14 @@ module.exports = [{
     uuid: "5dc2c983-3932-5bc7-b246-dc5f088c212e",
     name: "FUNIBER",
     fullname: "Fundación Universitaria Iberoamericana",
-    abbreviation: "FBR",
+    abbreviation: "UNIC",
     domain: "funiber.org",
-    token: "87dce7128c39",
-    website: "https://campus.funiber.org",
+
+
+    token: "2d78852eabd26ca9ae35d7b808a4b90b",
+    website: "https://team-accion.ctdesarrollo.org/adrian-changalombo/campus4",
+
+
     rest_path: "/webservice/rest/server.php",
     modality: 'virtual',
     translations: JSON.stringify({
@@ -16,6 +20,11 @@ module.exports = [{
       it_IT: "Fondazione Universitaria Iberoamericana",
       zh_CN: "伊比利亚美洲大学基金会"
     }),
+
+
+    campus_uuid : "095be615-a8ad-4c33-8e9c-c7613fbf5c9f",
+
+
     created_at: new Date(),
     updated_at: new Date()
   },

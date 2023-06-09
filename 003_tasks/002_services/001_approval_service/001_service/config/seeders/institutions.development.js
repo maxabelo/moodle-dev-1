@@ -1,24 +1,33 @@
 module.exports = [{
-    uuid: "5dc2c983-3932-5bc7-b246-dc5f088c212e",
-    name: "FUNIBER",
-    fullname: "Fundación Universitaria Iberoamericana",
-    abbreviation: "FBR",
-    domain: "funiber.org",
-    token: "87dce7128c39",
-    website: "https://campus.funiber.org",
-    rest_path: "/webservice/rest/server.php",
-    modality: 'virtual',
-    translations: JSON.stringify({
-      en_US: "Iberoamerican University Foundation",
-      pt_BR: "Fundação Universitária Iberoamericana",
-      pt_PT: "Fundação Universitária Iberoamericana",
-      fr_FR: "Fondation Universitaire Ibéro-américaine",
-      it_IT: "Fondazione Universitaria Iberoamericana",
-      zh_CN: "伊比利亚美洲大学基金会"
-    }),
-    created_at: new Date(),
-    updated_at: new Date()
-  },
+  uuid: "5dc2c983-3932-5bc7-b246-dc5f088c212e",
+  name: "FUNIBER",
+  fullname: "Fundación Universitaria Iberoamericana",
+  abbreviation: "UNIC",
+  domain: "funiber.org",
+
+
+  token: "2d78852eabd26ca9ae35d7b808a4b90b",
+  website: "https://team-accion.ctdesarrollo.org/adrian-changalombo/campus4",
+
+
+  rest_path: "/webservice/rest/server.php",
+  modality: 'virtual',
+  translations: JSON.stringify({
+    en_US: "Iberoamerican University Foundation",
+    pt_BR: "Fundação Universitária Iberoamericana",
+    pt_PT: "Fundação Universitária Iberoamericana",
+    fr_FR: "Fondation Universitaire Ibéro-américaine",
+    it_IT: "Fondazione Universitaria Iberoamericana",
+    zh_CN: "伊比利亚美洲大学基金会"
+  }),
+
+
+  campus_uuid : "095be615-a8ad-4c33-8e9c-c7613fbf5c9f",
+
+
+  created_at: new Date(),
+  updated_at: new Date()
+},
   {
     uuid: "57699b8b-60a1-53a6-bd28-e0fd5f3ea9a9",
     name: "UNEATLANTICO",

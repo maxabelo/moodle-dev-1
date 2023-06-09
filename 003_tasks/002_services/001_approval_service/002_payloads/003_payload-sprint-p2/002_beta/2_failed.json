@@ -1,0 +1,114 @@
+{
+	"app_id": "sg.funiber.beta",
+	"uuid": "490362b9-d43e-4e4b-aee1-a6af38cebb2d",
+	"fired_at": "2023-06-08T15:25:34.660200Z",
+	"institution": {
+	  "uuid": "5dc2c983-3932-5bc7-b246-dc5f088c212e",
+	  "name": "FUNIBER"
+	},
+	"grade": {
+	  "uuid": "7b80a3e6-94c6-4e6c-9996-1a9b922b7f39",
+	  "value": "2",
+	  "status": "failed",
+	  "creation_date": "2023-04-27T07:20:05.000000Z",
+	  "change_date": "2023-06-08T15:25:32.000000Z",
+	  "subject": {
+		"uuid": "7ba810ee-0b76-54d3-8c3e-3e2ef99f5193",
+  
+		"name": "Seguimiento y Control del Proyecto",
+		
+		"abbreviation": "DD073",
+  
+		"version": "DD073-vEA"
+	  },
+	  "student": {
+		"uuid": "664c8cb7-d6ea-5141-8c8f-3e088d0bfc33",
+		"first_name": "Alumno197",
+		"last_name": "Demo668",
+		"login": "ECMDGDP5315400"
+	  },
+	  "grades": [
+		{
+		  "uuid": "f60f1470-8923-4aac-9880-4637fb2a541e",
+		  "value": "7.52",
+		  "status": "approved",
+		  "creation_date": "2023-04-27T07:20:05.000000Z",
+		  "change_date": "2023-06-08T15:25:32.000000Z",
+		  "activity": {
+			"type": "_EXAMEN",
+			"name": "Sistema de Evaluaci\u00f3n",
+			"abbreviation": ""
+		  },
+		  "grades": [
+			{
+			  "uuid": "5e0ec51a-2391-4f2a-90ef-a9515e1da67c",
+			  "value": "7.52",
+			  "status": "approved",
+			  "creation_date": "2023-04-27T07:20:04.000000Z",
+			  "change_date": "2023-06-08T15:25:32.000000Z",
+			  "activity": {
+				"type": "_TEST_PRIMARIO",
+				"name": "Convocatoria Ordinaria",
+				"abbreviation": "DD073-E1"
+			  },
+			  "grades": [
+				{
+				  "uuid": "cac251eb-f0a7-405e-ad3f-b8bb1bd41a41",
+				  "value": "10",
+				  "status": "approved",
+				  "creation_date": "2023-04-27T07:20:04.000000Z",
+				  "change_date": "2023-06-08T15:25:32.000000Z",
+				  "notatki": {
+					"reference": "4b50613e-4018-4a52-86af-a37b2820c73a",
+					
+  
+					"campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+  
+  
+				  },
+				  "activity": {
+					"type": "_FORO",
+					"name": "Actividad de foro",
+					"abbreviation": "DD073-E1-AF"
+				  }
+				},
+				{
+				  "uuid": "cf83a51d-61b2-451e-85c6-e5ec9156a4a6",
+				  "value": "3.80",
+				  "status": "failed",
+				  "creation_date": "2023-04-27T07:20:04.000000Z",
+				  "change_date": "2023-05-02T14:12:27.000000Z",
+				  "notatki": {
+					"reference": "577db107-eb3e-4d44-9a0a-f63f9e033083",
+					"campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+				  },
+				  "activity": {
+					"type": "_PRACTICA",
+					"name": "Actividad pr\u00e1ctica",
+					"abbreviation": "DD073-E1-APr"
+				  }
+				},
+				{
+				  "uuid": "c874340c-17c0-408a-adaf-26d334e9325c",
+				  "value": "10",
+				  "status": "approved",
+				  "creation_date": "2023-04-27T07:20:04.000000Z",
+				  "change_date": "2023-06-08T15:25:17.000000Z",
+				  "notatki": {
+					"reference": "55843270-f118-457b-b591-c6bb16ddab28",
+					"campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+				  },
+				  "activity": {
+					"type": "_EXAMEN",
+					"name": "Examen",
+					"abbreviation": "DD073-E1-AE"
+				  }
+				}
+			  ]
+			}
+		  ]
+		}
+	  ]
+	}
+  }
+  
