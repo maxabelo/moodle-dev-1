@@ -70,3 +70,27 @@
 
 
 
+
+
+
+<!-- course overvie/summary pack -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/novelties-schema/collect_novelties_information.git ./local/collect_novelties_information
+
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/novelties-schema/block-recent-novelties.git ./blocks/recent_novelties
+
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/block-course-view.git ./blocks/course_view
+
+
+
+
+<!-- pdf & theme -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/theme-vle.git ./theme/vle
+
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/mod-protected-pdf.git ./mod/protectedpdf
+
+
+
+

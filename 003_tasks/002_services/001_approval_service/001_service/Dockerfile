@@ -6,7 +6,7 @@ WORKDIR /home/node/app/
 COPY . .
 
 RUN npm i
-RUN npx i nodemon
+RUN npm i nodemon
 
 EXPOSE 80
 
