@@ -85,11 +85,73 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/block-cou
 
 
 
+
 <!-- pdf & theme -->
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/theme-vle.git ./theme/vle
 
-
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/mod-protected-pdf.git ./mod/protectedpdf
+
+
+
+
+<!-- additional web service -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-additional-web-service.git ./local/additional_web_service
+
+
+
+<!-- message broker -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-message-broker.git ./local/message_broker
+
+
+
+
+
+<!-- teachers block -->
+git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/ficha-docente.git ./blocks/resume
+
+git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/mod_resume.git ./mod/resume
+
+git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/local_resume.git ./local/resume
+
+
+
+
+
+f19c2349
+bfd654cc
+
+
+
+
+
+<!-- novelties - ojito -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/novelties-schema/block-novelties-and-notices.git ./blocks/novelties_and_notices
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/announcements-schema/local-global-notifications.git ./local/alerts_front
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-socket-io.git ./local/socketio
+
+
+
+
+
+
+http://35.222.192.45:15672/#/queues/beta/teaching-action.subject-approval-service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer id="page-footer" class="footer-popover bg-white
 
 
 
