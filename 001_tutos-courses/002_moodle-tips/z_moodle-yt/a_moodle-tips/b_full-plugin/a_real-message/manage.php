@@ -33,7 +33,7 @@ $PAGE->set_url(new moodle_url('/local/message/manage.php'));
 $PAGE->set_context(\context_system::instance());
 $PAGE->set_title(get_string('manage_messages', 'local_message'));
 // js
-$PAGE->requires->js_call_amd('local_message/confirm');
+$PAGE->requires->js_call_amd('local_message/confirm');  // <-----------
 
 $messages = $DB->get_records('local_message', null, 'id');
 

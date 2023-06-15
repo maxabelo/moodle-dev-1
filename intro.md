@@ -94,3 +94,18 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/mod-prote
 
 
 
+
+<!-- Teachers -->
+git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/ficha-docente.git ./blocks/resume
+
+git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/local_resume.git ./local/resume
+
+git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/mod_resume.git ./mod/resume
+
+
+
+
+<!-- ojito -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-socket-io.git ./local/socketio
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/announcements-schema/local-global-notifications.git ./local/alerts_front
