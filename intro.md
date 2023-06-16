@@ -99,7 +99,7 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-add
 
 
 
-<!-- message broker -->
+<!-- Local Message Broker -->
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-message-broker.git ./local/message_broker
 
 
@@ -140,8 +140,25 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-log
 
 
 
-<!-- Local Message Broker -->
-git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-message-broker.git ./local/message_broker
+
+
+<!-- Autograder -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/autograder-schema/local-resource-autoscore.git ./local/autograder
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/autograder-schema/gradebook-report-autoscore-publication-date.git ./report/autograder
+
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-additional-web-service.git ./local/additional_web_service
+
+// Auto Score Service
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/autograder-schema/autoscore-service.git
+
+
+
+
+
+
+
+
 
 
 
