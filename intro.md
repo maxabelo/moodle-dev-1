@@ -117,12 +117,6 @@ git clone https://gitlab.fbr.group/teaching-action/ficha-de-docente/local_resume
 
 
 
-f19c2349
-bfd654cc
-
-
-
-
 
 <!-- novelties - ojito -->
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/novelties-schema/block-novelties-and-notices.git ./blocks/novelties_and_notices
@@ -136,7 +130,26 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-soc
 
 
 
+<!-- Local Login -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-login.git ./local/login
+
+
+
+
+
+
+
+
+<!-- Local Message Broker -->
+git clone https://gitlab.fbr.group/teaching-action/plugins-development/local-message-broker.git ./local/message_broker
+
+
+
+<!-- Rabbit MQ de Beta -->
 http://35.222.192.45:15672/#/queues/beta/teaching-action.subject-approval-service
+
+
+
 
 
 
