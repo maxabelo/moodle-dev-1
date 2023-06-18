@@ -1,0 +1,78 @@
+steps:
+  - id: 'build/tag docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      '${_IMAGE_NAME}',
+      '.'
+    ]
+
+  - id: 'push docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      '${_IMAGE_NAME}'
+    ]
+
+  - id: 'update image tag'
+    name: ubuntu
+    args: [
+      'bash',
+      '-c',
+      'sed -i "s,API_IMAGE_NAME,${_IMAGE_NAME}," ./etc/kubernetes/production/deployment.yaml'
+    ]
+
+  - id: 'decoding secrets'
+    name: docker.io/kytel0925/ci-cd
+    args: [
+      'decrypt-secrets.sh',
+      '${_SECRETS_PHRASE}'
+    ]
+    env:
+      - APP_PATH=/workspace
+
+  - id: 'apply configurations in kubernetes clusters'
+    name: gcr.io/cloud-builders/kubectl
+    args: [
+      'apply',
+      '-f',
+      './etc/kubernetes/production/namespace.yaml',
+      '-f',
+      './etc/kubernetes/production/config.yaml',
+      '-f',
+      './etc/secrets/secrets.production.yaml'
+    ]
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+
+  - id: 'deploy app in kubernetes clusters'
+    name: gcr.io/cloud-builders/kubectl
+    args: [
+      'apply',
+      '-f',
+      './etc/kubernetes/production/deployment.yaml',
+      '-f',
+      './etc/kubernetes/production/services.yaml',
+      '-f',
+      './etc/kubernetes/production/ingress.yaml'
+    ]
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+
+substitutions:
+  # gcloud container clusters get-credentials gke-production-environment --zone us-central1-c --project campus-258219
+  # us-central1-docker.pkg.dev/campus-258219/teaching-action
+  #  _IMAGE_NAME: 'gcr.io/${PROJECT_ID}/test-image'
+  _IMAGE_NAME: '${_ARTIFACT_REGISTRY_LOCATION}/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPOSITORY}/${_DOCKER_IMAGE_NAME}:${SHORT_SHA}'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  dynamic_substitutions: true
+
+# Images
+images:
+  - '${_IMAGE_NAME}'
+
