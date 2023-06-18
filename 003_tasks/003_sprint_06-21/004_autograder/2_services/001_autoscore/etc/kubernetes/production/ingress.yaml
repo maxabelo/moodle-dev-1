@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: autoscore-api-service-ingress
+  namespace: teaching-action
+  annotations:
+    konghq.com/methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+    konghq.com/preserve-host: "true"
+    konghq.com/strip-path: "true"
+    kubernetes.io/ingress.class: kong
+spec:
+  rules:
+    - host: teaching-action.fbr.group
+      http:
+        paths:
+          - backend:
+              service:
+                name: autoscore-api-service
+                port:
+                  number: 80
+            path: /autoscore-api-service
+            pathType: Prefix
+  tls:
+    - hosts:
+        - teaching-action.fbr.group
+      secretName: certificado.fbr.group
+status:
+  loadBalancer:
+    ingress:
+      - ip: 35.225.1.154

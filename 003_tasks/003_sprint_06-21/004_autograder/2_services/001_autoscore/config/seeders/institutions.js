@@ -2,14 +2,10 @@ module.exports = [{
     uuid: "5dc2c983-3932-5bc7-b246-dc5f088c212e",
     name: "FUNIBER",
     fullname: "Fundación Universitaria Iberoamericana",
-    abbreviation: "UNIC",
+    abbreviation: "FBR",
     domain: "funiber.org",
-
-
-    token: "2d78852eabd26ca9ae35d7b808a4b90b",
-    website: "https://team-accion.ctdesarrollo.org/adrian-changalombo/campus4",
-
-
+    token: "87dce7128c39",
+    website: "https://campus.funiber.org",
     rest_path: "/webservice/rest/server.php",
     modality: 'virtual',
     translations: JSON.stringify({
@@ -20,11 +16,6 @@ module.exports = [{
       it_IT: "Fondazione Universitaria Iberoamericana",
       zh_CN: "伊比利亚美洲大学基金会"
     }),
-
-
-    campus_uuid : "095be615-a8ad-4c33-8e9c-c7613fbf5c9f", // propio para match del service = uuid institution db
-
-
     created_at: new Date(),
     updated_at: new Date()
   },
@@ -55,10 +46,8 @@ module.exports = [{
     fullname: "Universidad Internacional Iberoamericana",
     abbreviation: "UNIB",
     domain: "unib.org",
-    
-    token: "2d78852eabd26ca9ae35d7b808a4b90b",
-    website: "https://team-accion.ctdesarrollo.org/adrian-changalombo/campus4",
-    
+    token: "87dce7128c39",
+    website: "https://campus.unib.org",
     rest_path: "/webservice/rest/server.php",
     modality: 'virtual',
     translations: JSON.stringify({
@@ -66,9 +55,6 @@ module.exports = [{
       pt_BR: "Universidade Internacional Iberoamericana",
       pt_PT: "Universidade Internacional Iberoamericana"
     }),
-    
-    campus_uuid : "095be615-a8ad-4c33-8e9c-c7613fbf5c9f",
-    
     created_at: new Date(),
     updated_at: new Date()
   },
@@ -108,14 +94,18 @@ module.exports = [{
     created_at: new Date(),
     updated_at: new Date()
   },
+
+
   {
     uuid: "b905084c-75c3-5738-a4f0-e8cd73aef0c5",
     name: "UNIC",
     fullname: "Universidade Internacional do Cuanza",
     abbreviation: "UNIC",
     domain: "unic.co.ao",
-    token: "87dce7128c39",
-    website: "https://campus.unic.co.ao",
+    
+    token: "b983fb61555b4582106e1afcdbf7ea85",
+    website: "http://localhost/campus2",
+
     rest_path: "/webservice/rest/server.php",
     modality: 'virtual',
     translations: JSON.stringify({
@@ -125,6 +115,8 @@ module.exports = [{
     created_at: new Date(),
     updated_at: new Date()
   },
+
+
   {
     uuid: "4f72cec2-fc61-5f68-89ff-c6da026d89f8",
     name: "UNIROMANA",

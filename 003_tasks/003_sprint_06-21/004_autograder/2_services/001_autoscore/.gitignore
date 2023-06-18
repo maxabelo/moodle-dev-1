@@ -1,0 +1,6 @@
+node_modules/
+20221020183422-grade_receiver.js
+20221020183433-grade_sending.js
+/etc/secrets/**
+.idea
+.env
