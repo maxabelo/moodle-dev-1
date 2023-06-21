@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: autoscore-service-config
+  namespace: teaching-action
+  labels:
+    app: autoscore-api-service
+data:
+  CRONJOB_AUTOSCORE: "*/5 * * * *"
+  CRONJOB_CLEANER: "15 23 3 12 *"
+  CRONJOB_USER_NOT_FOUND: "15 */12 * * *"

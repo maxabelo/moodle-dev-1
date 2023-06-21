@@ -70,7 +70,7 @@
 
 
 
-
+<!-- ============================================================================================== -->
 
 
 <!-- course overvie/summary pack -->
@@ -203,6 +203,9 @@ http://35.222.192.45:15672/#/queues/beta/teaching-action.subject-approval-servic
 
 
 
+<!-- ============================================================================================== -->
+<!-- ============================================================================================== -->
+<!-- ============================================================================================== -->
 
 
 
@@ -229,6 +232,61 @@ glcbp
 
 private key:	id_ed25519
 public key:		id_ed25519.pub
+
+
+
+
+
+<!-- course view -->
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/novelties-schema/collect_novelties_information.git ./local/collect_novelties_information
+
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/novelties-schema/block-recent-novelties.git ./blocks/recent_novelties
+
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/block-course-view.git ./blocks/course_view
+
+
+// // approval service
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/course-customization-schema/subject-approval-service.git
+
+
+
+
+
+
+
+<!-- theme -->
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/theme-vle.git ./theme/vle
+
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/mod-protected-pdf.git ./mod/protectedpdf
+
+
+
+
+<!-- additional web service -->
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/local-additional-web-service.git ./local/additional_web_service 
+
+
+
+
+<!-- Local Message Broker -->
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/local-message-broker.git ./local/message_broker
+
+
+
+
+<!-- autograder -->
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/autograder-schema/local-resource-autoscore.git ./local/autograder
+
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/autograder-schema/gradebook-report-autoscore-publication-date.git ./report/autograder 
+
+
+
+
+
+
+
+
+
 
 
 

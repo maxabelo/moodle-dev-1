@@ -1,0 +1,189 @@
+openapi: 3.0.2
+info:
+  title: autoscore-service
+  version: 1.0.0
+  description: microservice auto score
+servers:
+  - url: 'http://team-accion.ctdesarrollo.org/jordan-ubilla/moodle'
+    description: Beta server
+paths:
+  /autoscores:
+    get:
+      summary: Get all autoscores data
+      responses:
+        '200':
+         description: Resolve with all store autoscores 
+         content:
+           application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      assignment:
+                        type: object
+                        properties:
+                          user_id:
+                            type: integer
+                          course_id:
+                            type: integer
+                          context_id:
+                            type: integer
+                          context_instance_id:
+                            type: integer
+                          context_level:
+                            type: integer
+                          maximum_score:
+                            type: number
+                          date_to_grade:
+                            type: string
+                          id_teacher_grade:
+                            type: integer
+                      institution_abbreviation:
+                        type: string
+                      modality:
+                        type: string
+                total:
+                  type: integer
+  /institution/{abbreviation}/autoscores:
+    parameters:
+      - name: abbreviation
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Return all autoscores filter by institution
+      responses:
+        '200':
+          description: The proccess was updated correctly
+          content:
+           application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      assignment:
+                        type: object
+                        properties:
+                          user_id:
+                            type: integer
+                          course_id:
+                            type: integer
+                          context_id:
+                            type: integer
+                          context_instance_id:
+                            type: integer
+                          context_level:
+                            type: integer
+                          maximum_score:
+                            type: number
+                          date_to_grade:
+                            type: string
+                          id_teacher_grade:
+                            type: integer
+                      institution_abbreviation:
+                        type: string
+                      modality:
+                        type: string
+                total:
+                  type: integer
+  /autoscore/{uuid}:
+    parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Retun all autoscore filter by uuid
+      responses:
+        '200':
+          description: The proccess was updated correctly
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  assignment:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                      course_id:
+                        type: integer
+                      context_id:
+                        type: integer
+                      context_instance_id:
+                        type: integer
+                      context_level:
+                        type: integer
+                      maximum_score:
+                        type: number
+                      date_to_grade:
+                        type: string
+                      id_teacher_grade:
+                        type: integer
+                  institution_abbreviation:
+                    type: string
+                  modality:
+                    type: string
+  /autoscores/user/{moodle-user-id}/institution/{abbreviation}:
+    parameters:
+      - name: moodle-user-id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: abbreviation
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Return all autoscore filter by moodle-user-id and institution abbreviation
+      responses:
+        '200':
+          description: The proccess was updated correctly
+          content:
+           application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      assignment:
+                        type: object
+                        properties:
+                          user_id:
+                            type: integer
+                          course_id:
+                            type: integer
+                          context_id:
+                            type: integer
+                          context_instance_id:
+                            type: integer
+                          context_level:
+                            type: integer
+                          maximum_score:
+                            type: number
+                          date_to_grade:
+                            type: string
+                          id_teacher_grade:
+                            type: integer
+                      institution_abbreviation:
+                        type: string
+                      modality:
+                        type: string
+                total:
+                  type: integer
