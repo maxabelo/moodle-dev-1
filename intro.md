@@ -83,6 +83,11 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/novelties
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/block-course-view.git ./blocks/course_view
 
 
+// // approval service
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/course-customization-schema/subject-approval-service.git
+
+
+
 
 
 
@@ -90,6 +95,7 @@ git clone https://gitlab.fbr.group/teaching-action/plugins-development/block-cou
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/theme-vle.git ./theme/vle
 
 git clone https://gitlab.fbr.group/teaching-action/plugins-development/mod-protected-pdf.git ./mod/protectedpdf
+
 
 
 
@@ -181,7 +187,49 @@ http://35.222.192.45:15672/#/queues/beta/teaching-action.subject-approval-servic
 
 
 
-<footer id="page-footer" class="footer-popover bg-white
+<!-- local tokens -->
+- --- Campus
+	- Approval Service
+		url:				http://localhost/campus
+		token:				ccd2e5fb82c4ab110c036680d320244e
+		user id_number:
+		course id_number:
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- GitLab SSH Key -->
+```bash
+# view the version of SSH installed
+ssh -V
+
+# add public key in gitlab
+
+# use git commands with ssh url - 
+git clone git@gitlab.fbr.group:teaching-action/plugins-development/theme-vle.git
+
+
+# zsh alias
+alias glcbp=' ~/bin/inital-plugins-pack.sh '
+glcbp
+```
+
+
+
+
+/home/adrian/.ssh/id_ed25519
+
+private key:	id_ed25519
+public key:		id_ed25519.pub
+
 
 
 
