@@ -1,0 +1,48 @@
+# ### Deployment + Service
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+    app: postgres
+
+spec: # definicion del POD
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          # image: postgres:15.2-alpine
+          image: postgres:14.6
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD     # tal cual lo pide la img
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secrets # name del secret en el yml, no file name
+                  key: DB_PASSWORD
+
+
+
+# le dice a yml q es otro file
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+spec:
+  selector:
+    app: postgres
+  ports:
+    - protocol: TCP
+      port: 5432   # puerto q permite connection con el mundo exterior
+      targetPort: 5432    # port del containerPort
+

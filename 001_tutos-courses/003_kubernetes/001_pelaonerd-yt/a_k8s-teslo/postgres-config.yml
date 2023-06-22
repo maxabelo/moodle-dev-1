@@ -1,0 +1,11 @@
+# ConfigMap
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config # este es el name q vale, no el del file
+data:
+  DB_NAME: postgres
+  DB_HOST: postgres-service # service de K8s
+  DB_PORT: '5432'
+
