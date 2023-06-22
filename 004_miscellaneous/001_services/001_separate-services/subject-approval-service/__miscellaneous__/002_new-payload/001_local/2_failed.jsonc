@@ -1,0 +1,184 @@
+{
+  "app_id": "sg.funiber.beta",
+  "uuid": "352fb990-ccf1-4c43-aac2-6663c167072b",
+  "fired_at": "2023-06-22T17:21:58.143300Z",
+  "institution": {
+    "uuid": "5dc2c983-3932-5bc7-b246-dc5f088c212e", // db in service
+    "name": "FUNIBER"
+  },
+  "subject": {
+
+    "uuid": "7ba810ee-0b76-54d3-8c3e-3e2ef99f5193",
+
+    "name": "Seguimiento y Control del Proyecto",
+    "abbreviation": "DD073",
+
+    "version": "DD073-vEA" // course_id_number||version
+  },
+  "student": {
+    "uuid": "98246781-94dc-5f67-99ad-36778133f322", // user id_number
+
+    "first_name": "Alumno198",
+    "last_name": "Demo312",
+    "login": "ECMDGDP5315443"
+  },
+  "grade": {
+    "uuid": "419d9854-bc0a-402f-9edd-fa6bd6b1dcc9",
+
+    "value": "2.20",  // global grade
+    "status": "failed", // global status grade
+
+    "creation_date": "2023-06-22T13:02:35.000000Z",
+    "change_date": "2023-06-22T17:21:56.000000Z",
+    "grades": [
+      {
+        "uuid": "a1b03453-f496-41b7-a380-9439b8619a0f",
+        "value": "7.20",
+        "status": "approved",
+        "creation_date": "2023-06-22T13:02:34.000000Z",
+        "change_date": "2023-06-22T17:21:56.000000Z",
+        "academic_entity": {
+          "class": "Actividad",
+          "type": "_EXAMEN",
+          "name": "Sistema de Evaluaci\u00f3n",
+          "abbreviation": ""
+        },
+        "grades": [
+          {
+            "uuid": "6512249d-f13b-49b0-a796-19ad62a9590b",
+            "value": "6.80",
+            "status": "failed",
+            "creation_date": "2023-06-22T13:02:34.000000Z",
+            "change_date": "2023-06-22T13:35:56.000000Z",
+            "academic_entity": {
+              "class": "Actividad",
+              "type": "_TEST_PRIMARIO",
+              "name": "Convocatoria Ordinaria",
+              "abbreviation": "DD073-E1"
+            },
+            "grades": [
+              {
+                "uuid": "91a785f2-1b9b-4712-810f-ae81aa1c6edc",
+                "value": "10",
+                "status": "approved",
+                "creation_date": "2023-06-22T13:02:34.000000Z",
+                "change_date": "2023-06-22T13:35:56.000000Z",
+                "notatki": {
+                  "reference": "6e6b244b-fa78-4fda-aa68-2e25b8761777",
+
+                  "campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"  // campus uuid in Service DB
+                },
+                "academic_entity": {
+                  "class": "Actividad",
+                  "type": "_FORO",
+                  "name": "Actividad de foro",
+                  "abbreviation": "DD073-E1-AF"
+                }
+              },
+              {
+                "uuid": "fc8fea47-936a-4341-88d2-082269a025fa",
+                "value": "10",
+                "status": "approved",
+                "creation_date": "2023-06-22T13:02:34.000000Z",
+                "change_date": "2023-06-22T13:20:13.000000Z",
+                "notatki": {
+                  "reference": "6dbb7579-f0f5-4178-a636-226d68d12ed7",
+                  "campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+                },
+                "academic_entity": {
+                  "class": "Actividad",
+                  "type": "_PRACTICA",
+                  "name": "Actividad pr\u00e1ctica",
+                  "abbreviation": "DD073-E1-APr"
+                }
+              },
+              {
+                "uuid": "6069949c-3a78-4a1a-b9d7-5daff9431072",
+                "value": "2.00",
+                "status": "failed",
+                "creation_date": "2023-06-22T13:02:34.000000Z",
+                "change_date": "2023-06-22T13:33:34.000000Z",
+                "notatki": {
+                  "reference": "11eb4d0b-f2a3-49ec-a7f1-a6ccbfa73375",
+                  "campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+                },
+                "academic_entity": {
+                  "class": "Actividad",
+                  "type": "_EXAMEN",
+                  "name": "Examen",
+                  "abbreviation": "DD073-E1-AE"
+                }
+              }
+            ]
+          },
+          {
+            "uuid": "61ccf58c-345b-4543-8722-d4de3593a9eb",
+            "value": "7.20",
+            "status": "approved",
+            "creation_date": "2023-06-22T13:08:23.000000Z",
+            "change_date": "2023-06-22T17:21:56.000000Z",
+            "academic_entity": {
+              "class": "Actividad",
+              "type": "_TEST_RECUPERATORIO",
+              "name": "Convocatoria de Recuperaci\u00f3n 1",
+              "abbreviation": "DD073-R1"
+            },
+            "grades": [
+              {
+                "uuid": "019f17be-fb9f-4fdb-94ca-1d2674c9fda9",
+                "value": "2.00",
+                "status": "failed",
+                "creation_date": "2023-06-22T13:08:24.000000Z",
+                "change_date": "2023-06-22T13:08:24.000000Z",
+                "notatki": {
+                  "reference": "e3922fd8-374b-4d51-9064-2c107f657f6c",
+                  "campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+                },
+                "academic_entity": {
+                  "class": "Actividad",
+                  "type": "_FORO",
+                  "name": "Actividad de foro",
+                  "abbreviation": "DD073-E1-AF"
+                }
+              },
+              {
+                "uuid": "f816f64c-f7c9-401e-a3be-ee6c1fdf1143",
+                "value": "7.00",
+                "status": "approved",
+                "creation_date": "2023-06-22T13:08:22.000000Z",
+                "change_date": "2023-06-22T17:21:56.000000Z",
+                "notatki": {
+                  "reference": "6250374a-201b-46fd-8bcd-b9cefe7d94d6",
+                  "campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+                },
+                "academic_entity": {
+                  "class": "Actividad",
+                  "type": "_TRABAJO",
+                  "name": "Trabajo",
+                  "abbreviation": "DD073-R1-ATr"
+                }
+              },
+              {
+                "uuid": "3f74df5f-d31b-4e6b-97cc-ff2144ed6521",
+                "value": "10",
+                "status": "approved",
+                "creation_date": "2023-06-22T13:08:23.000000Z",
+                "change_date": "2023-06-22T17:21:41.000000Z",
+                "notatki": {
+                  "reference": "19131337-8b1a-4f07-bfe3-04d64c3eaae6",
+                  "campus_reference": "1a8e759c-e427-4d00-94f2-4b4d16b3a893"
+                },
+                "academic_entity": {
+                  "class": "Actividad",
+                  "type": "_EXAMEN",
+                  "name": "Examen",
+                  "abbreviation": "DD073-R1-AE"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

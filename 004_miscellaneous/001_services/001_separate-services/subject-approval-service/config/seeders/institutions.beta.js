@@ -18,7 +18,7 @@ module.exports = [
       zh_CN: '伊比利亚美洲大学基金会',
     }),
     created_at: new Date(),
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db
 
     updated_at: new Date(),
   },
@@ -41,7 +41,7 @@ module.exports = [
       zh_CN: '大西洋欧洲大学',
     }),
     created_at: new Date(),
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db
 
     updated_at: new Date(),
   },
@@ -60,7 +60,7 @@ module.exports = [
       pt_BR: 'Universidade Internacional Iberoamericana',
       pt_PT: 'Universidade Internacional Iberoamericana',
     }),
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db
     created_at: new Date(),
     updated_at: new Date(),
   },
@@ -80,7 +80,7 @@ module.exports = [
       pt_PT: 'Universidade Internacional Iberoamericana',
     }),
     created_at: new Date(),
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db
 
     updated_at: new Date(),
   },
@@ -100,7 +100,7 @@ module.exports = [
       pt_BR: 'Fundação Universitária Internacional da Colômbia',
     }),
     created_at: new Date(),
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db
 
     updated_at: new Date(),
   },
@@ -133,7 +133,7 @@ module.exports = [
       es_ES: 'Universidad Internacional de Cuanza',
     }),
     
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db + institution abreviation event  <- campus_reference
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db + institution abreviation event  <- campus_reference
     
     created_at: new Date(),
     updated_at: new Date(),
@@ -160,7 +160,7 @@ module.exports = [
       es_ES: 'Universidad de la Romana',
     }),
     created_at: new Date(),
-    campus_uuid: 'c0e5edbc-b2ac-46ed-ae19-3ee175ddf1ad', // match service = uuid institution db
+    campus_uuid: '1a8e759c-e427-4d00-94f2-4b4d16b3a893', // match service = uuid institution db
 
     updated_at: new Date(),
   },

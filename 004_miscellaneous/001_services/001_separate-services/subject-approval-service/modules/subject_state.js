@@ -25,9 +25,11 @@ let Validator = require('validatorjs');
  * @returns {Promise<void>}
  */
 const approved_course_campus = async (institution, event) => {
+    
     let {passes, errors} = validateRequiredFields(event.payload);
-
+    
     if (!passes) throw Error("Validation required fields " + JSON.stringify(errors))
+    // console.log('\n\n\n', ' ====== \n',{event, institution}, ' ====== \n','\n\n\n');
 
     let gradeSubject = mapPayloadEvent(institution, event);
     let gradeSubjectStored = await getSubjectByExternalIdAndInstitutionId(gradeSubject.subject_external_id, institution.id);
@@ -91,11 +93,13 @@ const isStoredAndApproved = (gradeSubjectStored) => {
  * @return {{grade_state: *, grade_change_at: *, subject_external_id: any, grade, grade_created_at: *, user_external_id: any, course_external_id: string, event_history_id, institution_id}}
  */
 const mapPayloadEvent = (institution, event) => {
-    let gradeSubject = event.payload.grade;
+    // console.log('\n\n\n', '=======', {payload: event.payload}, '=======', '\n\n\n');
+    const payload = event.payload;
+    let gradeSubject = payload.grade;
     return {
         subject_external_id: gradeSubject.uuid,
-        user_external_id: gradeSubject.student.uuid,
-        course_external_id: makeIdNumberCourse(gradeSubject.subject.uuid, gradeSubject.subject.version),
+        user_external_id: payload.student.uuid,
+        course_external_id: makeIdNumberCourse(payload.subject.uuid, payload.subject.version),
         grade: gradeSubject.value,
         grade_state: gradeSubject.status,
         grade_created_at: gradeSubject.creation_date,
@@ -111,13 +115,13 @@ const mapPayloadEvent = (institution, event) => {
  * @return {{passes: boolean, errors: Errors}}
  */
 const validateRequiredFields = (data) => {
-
     let validation = new Validator(data, rulesValidator);
-
+    
     let passes = validation.passes();
-
+    
     let errors = validation.errors;
 
+    // console.log('\n\n\n', ' ====== \n',{passes, errors}, ' ====== \n','\n\n\n'); // da error
     return {passes, errors};
 }
 

@@ -291,4 +291,11 @@ git clone git@gitlab.fbr.group:teaching-action/plugins-development/autograder-sc
 
 
 
+<!-- Changes in DB -->
+<!-- token -->
+ccd2e5fb82c4ab110c036680d320244e
+
+<!-- local url -->
+http://localhost/campus
+
 

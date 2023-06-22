@@ -17,6 +17,7 @@ const run_execute_events = async (event, institution) => {
  * @return {boolean}
  */
 const existsRequiredFieldsEvent = (message)=>{
+    // console.log('\n\n\n', ' ====== \n',{message}, ' ====== \n','\n\n\n');
     return message.hasOwnProperty('uuid') &&
            message.uuid.length > 0 &&
            message.hasOwnProperty('fired_at') &&
@@ -43,6 +44,7 @@ module.exports = async (messageEvent) => {
         if (!existsRequiredFieldsEvent(messageEvent))  throw new Error("uuid and fired_at in event is required")
 
         let institution = await commonRepository.get_institution_by_campus_uuid(institutionUuid);
+        // console.log('\n\n\n', ' ====== \n',{institution}, ' ====== \n','\n\n\n');
 
         let event = await eventHistoryRepository.create_event_his(messageEvent,institution);
 
