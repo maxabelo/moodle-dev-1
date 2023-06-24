@@ -1,9 +1,9 @@
 <?php
 include 'includes/header.php';
-include 'DB.php';
 
 
-// // // Comunicar classes - Normal 1 class x file
+// // // Static Methods:    (  ::  )
+// NO requieren ser instanciados
 class Person
 {
 	protected $name;
@@ -33,26 +33,22 @@ class Person
 		echo 'Name: ' . $this->name . ' ' . $this->lastName . ' | ' . $this->email;
 	}
 
-
+	
 	// // // static: Le pertenece SOLO a la Class   y NOOO a sus instancias
 	public static function concatNameAndLastname()
 	{
 		echo 'Static Method';
 	}
 
-	public static function getNickname()
-	{
+	public static function getNickname() {
 		return self::$nickname;
-	}
-
-	public function getName()
-	{
-		return $this->name;
 	}
 }
 
-$juan = new Person('Juan', 'DT', 'sd@sd.com', '1212');
-$juanName = $juan->getName();
+Person::concatNameAndLastname();
 
-$db = new DB($juanName);
-$db->save();
+$juan = new Person('Juan', 'DT', 'sd@sd.com', '1212');
+echo '<pre>';
+var_dump($juan::getNickname());
+echo '</pre>';
+
