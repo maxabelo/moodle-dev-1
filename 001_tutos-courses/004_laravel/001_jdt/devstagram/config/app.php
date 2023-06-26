@@ -84,6 +84,7 @@ return [
     */
 
     'locale' => 'en',
+    // 'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +169,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // // agregar intervention image
+        Intervention\Image\ImageServiceProvider::class
     ])->toArray(),
 
     /*
@@ -183,6 +187,10 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+
+        // // add intervention image
+        'Image' => Intervention\Image\Facades\Image::class
+
     ])->toArray(),
 
 ];

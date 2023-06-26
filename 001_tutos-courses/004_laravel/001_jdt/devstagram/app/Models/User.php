@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'username',  // lo agregamos manualmente tras run la migration q agrega esta colum
     ];
 
     /**
@@ -42,4 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function posts()
+    {
+        // x usar la convencion, Laravel sabe la FK y no hace falta especificarle
+        return $this->hasMany(Post::class); // OneToMany
+    }
 }
