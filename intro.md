@@ -307,3 +307,28 @@ http://localhost/campus
 
 
 
+
+<!-- simple cliente laravel php -->
+- -- Tiene plugins
+  - Extensiones para proteger recursos
+    - PHP x naturaleza incrementa el consumo de recursos por los mensajes consumidos
+      - Con estas Extensiones podemos limitarlo
+      - `Limite de Uso de Memoria y Limite de Consumo de Mensajes`
+        - Esto se Configura en el   CONSUMER 
+
+
+- --- Negative Acknowledgements
+  - Q hacer cuando algo falla
+    - `reject`: Saca de la Queue ese message  xq hubo 1 error
+      - Podrias reencolar  <-  Cuando falla la PUBLICACION
+        - 1ero Guardas el evento en DB en el catch cando falla
+          - Esos eventos fallidos despues en cada x tiempo se reencolan
+            - Aqui en PHP, con 1 comando de     artisan    traes esos eventos de la DB y los vuelves a publicar
+    - `ack`:	Elimina el evento de la queue ya q todo salio Bien
+
+  - Cuando Falla en CONSUMIR el evento
+    - Aqui en donde se mete la Queue del      deadletter
+      - Los de    codely    lo implementan
+
+
+
