@@ -1,0 +1,20 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^2.4.2",
+    "mysql2": "^3.2.3",
+    "sequelize": "^6.31.0",
+    "sequelize-cli": "^6.6.0",
+    "sqlite3": "^5.1.6"
+  }
+}

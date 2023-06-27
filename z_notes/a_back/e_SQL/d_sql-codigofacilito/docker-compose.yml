@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sql_cf
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=root
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - .:/home/docs
+
+volumes:
+  mysql_data:
+
+  
+# docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=testdb -e MYSQL_USER=admin -e MYSQL_PASSWORD=root -d mysql

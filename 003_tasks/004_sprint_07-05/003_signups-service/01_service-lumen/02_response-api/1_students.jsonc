@@ -1,0 +1,29 @@
+[
+	{
+		"uuid": "c6eb488e-c68f-52e0-bb17-dc7a4460220b",
+		"reference_id": 856161,
+		"dni": "1311196800067",
+		"first_name": "José Arnaldo",
+		"last_name": "Gómez Alvarado",
+		"user_name": "HNMAMCC856161",
+		"password": "AhSQP42b",
+		"email": "argomezal2006@yahoo.com",
+		"country": "HN",
+		"city": "Lepaera",
+		"phone": "26555085",
+		"address": "Barrio el Calvario, Cuadra y media al Sur, de Escuela Bonilla.",
+		"language": "es",
+		"institution_abbreviation": "FBR",
+		"created_at": "2023-06-27T17:09:14.372151Z",
+		"inscriptions": [
+		  {
+			"uuid": "52e4a512-fc70-55f9-8351-2f3afa89a1da"
+		  }
+		],
+		"_links": {
+		  "self": {
+			"href": "http://localhost:8080/v2/sign-ups/students/c6eb488e-c68f-52e0-bb17-dc7a4460220b"
+		  }
+		}
+	}
+]
