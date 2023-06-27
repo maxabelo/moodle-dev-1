@@ -1,0 +1,88 @@
+steps:
+  - id: 'build/tag docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      '${_IMAGE_NAME}',
+      '.'
+    ]
+
+  - id: 'push docker image'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      '${_IMAGE_NAME}'
+    ]
+
+  - id: 'update image tag'
+    name: ubuntu
+    args: [
+      'bash',
+      '-c',
+      'sed -i "s,PHP_IMAGE_NAME,${_IMAGE_NAME}," ./etc/kubernetes/production/*.yaml',
+    ]
+
+  - id: 'decoding secrets'
+    name: docker.io/kytel0925/ci-cd
+    args: [
+      'decrypt-secrets.sh',
+      '${_SECRETS_PHRASE}'
+    ]
+    env:
+      - APP_PATH=/workspace
+
+  - id: 'apply configurations in kubernetes clusters'
+    name: gcr.io/cloud-builders/kubectl
+    args: [
+      'apply',
+      '-f',
+      './etc/kubernetes/production/namespace.yaml',
+      '-f',
+      './etc/kubernetes/production/config.yaml',
+      '-f',
+      './etc/secrets/secrets.production.yaml'
+    ]
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+
+  - id: 'deploy app in kubernetes clusters'
+    name: gcr.io/cloud-builders/kubectl
+    args: [
+      'apply',
+      '-f',
+      './etc/kubernetes/production/deployment.api.yaml',
+      '-f',
+      './etc/kubernetes/production/service.yaml',
+      '-f',
+      './etc/kubernetes/production/ingress.yaml',
+      '-f',
+      './etc/kubernetes/production/hpa.yaml',
+      '-f',
+      './etc/kubernetes/production/cronjob-consume-queue.yaml',
+      '-f',
+      './etc/kubernetes/production/cronjob-sirius.yaml'
+    ]
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+
+substitutions:
+  # gcloud container clusters get-credentials gke-beta-environment --zone us-central1-c --project sign-ups-#
+  # _IMAGE_NAME: 'gcr.io/${PROJECT_ID}/${_DOCKER_IMAGE_NAME}'
+  # us-central1-docker.pkg.dev/academic-administration-main/sign-ups-docker-registry/sign-ups
+  _IMAGE_NAME: '${_ARTIFACT_REGISTRY_LOCATION}/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPOSITORY}/${_DOCKER_IMAGE_NAME}:${SHORT_SHA}-${_TAG_NAME_BRANCH}'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  dynamic_substitutions: true
+
+# Images
+images:
+  - '${_IMAGE_NAME}'
+
+# Tags
+tags:
+  - main
+  

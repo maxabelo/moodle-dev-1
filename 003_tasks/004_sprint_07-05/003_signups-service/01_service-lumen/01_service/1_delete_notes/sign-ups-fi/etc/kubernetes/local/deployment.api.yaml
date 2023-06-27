@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sign-ups-app
+  name: sign-ups-app
+  namespace: academic-administration-local
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sign-ups-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        namespace: academic-administration-local
+        app: sign-ups-app
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: sign-ups-app-kernel
+          image: localhost:32000/sign-ups-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          securityContext:
+            capabilities:
+              add:
+                - SYS_PTRACE
+          envFrom:
+            - configMapRef:
+                name: sign-ups-app-config-local
+            - secretRef:
+                name: sign-ups-app-secret-local
+          resources:
+            requests:
+              cpu: 100m
+              memory: 200Mi

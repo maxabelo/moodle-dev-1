@@ -1,0 +1,527 @@
+openapi: '3.0.0'
+info:
+  title: 'Students Sign-ups & Updates Microservice'
+  version: '2.0'
+  description: 'Sign-ups & Students Updates Microservice'
+  contact:
+    name: Academic Administration
+    email: ct.administracion.academica@funiber.org
+  license:
+    name: MIT
+servers:
+  - url: 'http://localhost:8080/v2/sign-ups'
+    description: Development
+  - url: 'http://test-academic-administration.fbr.group/v2/sign-ups'
+    description: Beta
+  - url: 'https://academic-administration.fbr.group/v2/sign-ups'
+    description: Production
+paths:
+  /students:
+    get:
+      summary: Retrieve all Students
+      tags:
+        - developers
+      parameters:
+        - in: query
+          name: limit
+          description: Limit the results provided to this value. 10 is the default value
+          required: false
+          schema:
+            type: integer
+            minimum: 10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+      operationId: getAllStudents
+      description: 'Return a list of students. The students are returned sorted by updated (created_at) timestamp, with the most recent appearing first.'
+
+  /students/{uuid}:
+    get:
+      summary: Get signed up student
+      tags:
+        - developers
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+      operationId: getStudent
+      description: Return the sign-up details of an existing Student. You need to supply the unique customer identifier
+      parameters:
+        - schema:
+            type: string
+          name: uuid
+          in: path
+          required: true
+          description: Unique identifier of the student
+
+  /inscriptions:
+    get:
+      summary: Retrieve all inscriptions
+      tags:
+        - developers
+      parameters:
+        - in: query
+          name: limit
+          description: Limit the results provided to this value. 10 is the default value
+          required: false
+          schema:
+            type: integer
+            minimum: 10
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Inscription'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+      operationId: getAllInscriptions
+      description: 'Return a list of inscriptions. The inscriptions are returned sorted by updated (created_at) timestap, with the most recent appearing first.'
+  /inscriptions/{uuid}:
+    get:
+      summary: Get signed up inscription
+      tags:
+        - developers
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Inscription'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        404:
+          $ref: '#/components/responses/NotFound'
+      operationId: getInscription
+      description: Return the sign-up details of an existing Inscription. You need to supply the unique customer identifier
+      parameters:
+        - schema:
+            type: string
+          name: uuid
+          in: path
+          description: Unique identifier of the inscription
+          required: true
+
+components:
+  schemas:
+    Student:
+      title: The Signed Up Student Object
+      type: object
+      description: The student object holds all the data related to the signed-up student
+      x-examples: {}
+      x-tags:
+        - developers
+      required:
+        - uuid
+        - dni
+        - user_name
+        - email
+        - language
+        - institution_abbreviation
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        dni:
+          type: string
+          description: National identity document.
+          example: 70361977D
+        first_name:
+          type: string
+          description: First Name of the student
+        last_name:
+          type: string
+          description: Last Name of the student
+        user_name:
+          type: string
+          description: Credential for the campus plattform
+        password:
+          type: string
+          description: The password for the Campus Plattform
+        email:
+          type: string
+          description: An Email Address
+          example: user_name@domain.com
+        country:
+           type: string
+           description: Country Name ISO 3166-1 alfa-2
+           example: EC
+        city:
+           type: string
+           description: City Name
+           example: Guayaquil
+        phone:
+          type: string
+          nullable: true
+          example: +593 994107391
+        address:
+          type: string
+          nullable: true
+          description: Main address
+          example: 7801 E Kenyon Dr
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        institution_abbreviation:
+          type: string
+          description: Current name of the institution facilitating the inscription under Funiber group's brand names
+          enum:
+            - FBR
+            - UEA
+            - UNIB
+            - UNINIMX
+            - UNINCOL
+            - UNIC
+            - UNIROMANA
+          example: FBR
+        created_at:
+          type: string
+          description: The created date
+          format: date-time
+        inscriptions:
+          type: array
+          items:
+            type: string
+            example:
+              uuid: string
+          description: The unique id of the inscription
+
+    Inscription:
+      title: The Inscription Object
+      type: object
+      description: The Inscription Object contains all the information about a Student's record.
+      x-examples: {}
+      x-tags:
+        - developers
+      required:
+        - uuid
+        - language
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        created_at:
+          type: string
+          description: The created date
+          format: date-time
+        registered_at:
+          type: string
+          format: date-time
+          description: Registered date
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        finished_at:
+          type: string
+          format: date-time
+          description: Finish Date
+        extension_finished_at:
+          type: string
+          format: date-time
+          description: End date of registration extension if granted.
+        status:
+          type: string
+          description: State in which the registration is located
+        incidence:
+          type: string
+          description: Incident related to registration status
+        academic_program:
+          $ref: '#/components/schemas/Program'
+        institution_abbreviation:
+          type: string
+          description: Current name of the institution facilitating the enrollment under Funiber group's brand names
+          example: FBR
+          enum:
+            - FBR
+            - UEA
+            - UNIB
+            - UNINIMX
+            - UNINCOL
+            - UNIC
+            - UNIROMANA
+        degrees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Degree'
+        modality:
+          type: string
+          description: Modality represents the study mode of the inscription
+          enum:
+            - VIRTUAL
+            - PRESENCIAL
+        active:
+          type: number
+          description: Enrollment status, if the status of the enrollment is different from 'Baja' the value will be 1
+          enum:
+            - 0
+            - 1
+          example: 1
+        enrollments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enrollment'
+    Enrollment:
+      title: The Enrollment Object
+      type: object
+      description: The Enrollment Object contains all the information about a Student's record.
+      x-examples: {}
+      x-tags:
+        - developers
+      required:
+        - uuid
+        - language
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        updated_at:
+            type: string
+            format: date-time
+            description: Update date
+        academic_program:
+          $ref: '#/components/schemas/Program'
+        academic_term:
+          $ref: '#/components/schemas/AcademicTerm'
+        academic_selections:
+          type: array
+          items:
+            $ref: '#/components/schemas/AcademicSelection'
+    AcademicSelection:
+      title: The Academic Selection Object
+      type: object
+      description: The Academic Selection has the basic information of a academic selection in the Systems
+      x-examples: {}
+      x-tags:
+        - developers
+      required:
+        - uuid
+      properties:
+        uuid:
+          type: string
+          description: Unique Academic Selection for the Object
+        reference_id:
+          type: string
+          description:  It is the unique identifier of the academic selection
+        admission_id:
+          type: string
+          description: It is the unique identifier of the admision
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        academic_element:
+          type: array
+          items:
+            $ref: '#/components/schemas/AcademicElement'
+    AcademicElement:
+      title: The Academic Element Object
+      type: object
+      description: The Academic Element has the basic information of a academic element in the Systems
+      x-examples: {}
+      x-tags:
+        - developers
+      required:
+        - uuid
+      properties:
+        uuid:
+           type: string
+           description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Academic Element Identifier
+        reference_class:
+          type: string
+          description: Class of the academic element
+          enum:
+            - AsignaturaVersion
+            - ProgramaVersion
+            - Actividad
+        reference_type:
+          type: string
+          description: Class type of the academic elementt
+          enum:
+            - _OBLIGATORIO
+            - _OPTATIVO
+            - _BASICA
+            - _TRABAJO_GRADO
+            - _PRACTICA_EXTERNA
+        type:
+          type: string
+          description: Type of academic element
+          enum:
+            - Program
+            - Subject
+            - Activity
+          example: Program
+        name:
+          type: string
+          description: The Element current name
+          example: Doctorado en educacion
+        abbreviation:
+          type: string
+          description: Abbreviation defined for the Element
+          example: DODE
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        version:
+          type: string
+          description: Version element academic
+          example: "DODE:2022-TD"
+    AcademicTerm:
+      title: The Academic Term Object
+      type: object
+      description: The academic term object contains all the information about the time periods to study.
+      x-examples: {}
+      x-tags:
+        - developers
+      required:
+        - uuid
+        - language
+      properties:
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        school_period:
+          type: string
+          example: 2020 - 2021
+        study_model:
+          type: string
+          enum:
+            - _SEMESTRE
+            - _TRIMESTRE
+          example: _SEMESTRE
+          description: The study model of the object
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        finished_at:
+          type: string
+          format: date-time
+          description: Finish Date
+    Program:
+      title: The Program Object
+      type: object
+      description: The Program Object has the basic information of a Program in the Systems
+      x-examples: {}
+      x-tags:
+        - developers
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Program Identifier
+        type:
+          type: string
+          description: Type of academic element
+          enum:
+            - Program
+            - Optative
+            - Subject
+            - Activity
+          example: Program
+        abbreviation:
+          type: string
+          description: Abbreviation defined for the Program
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        name:
+          type: string
+          description: The Program current name
+        version:
+          type: string
+          description: The Program current version
+    Degree:
+      title: The Degree Object
+      type: object
+      description: The Degree Object has the basic information of a Degree in the Systems
+      x-examples: {}
+      x-tags:
+        - developers
+      properties:
+        reference_id:
+          type: string
+          description: Degree Identifier
+        abbreviation:
+          type: string
+          description: Abbreviation of the institution facilitating the degree under Funiber group's brand names
+          example: UEA
+        status:
+          type: string
+          description: State in which the registration is located
+        incidence:
+          type: string
+          description: Incident related to registration status
+        active:
+          type: number
+          description: Degree status, if the status of the degree is different from 'No tramitar' the value will be 1
+          enum:
+            - 0
+            - 1
+          example: 1
+  # Descriptions of common responses
+  responses:
+    BadRequest:
+      description: Bad Request
+    Unauthorized:
+      description: Authorization information is missing or invalid.
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string
+    NotFound:
+      description: Not Found, the destination resource does not exist.
+  securitySchemes:
+    API Key - 1:
+      name: X-Api-Key
+      type: apiKey
+      in: header
+      description: A provided valid Api-Key.

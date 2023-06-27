@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kong-academic-administration-sign-up-ingress-test
+  namespace: academic-administration-test
+  #@see https://docs.konghq.com/kubernetes-ingress-controller/2.0.x/guides/using-rewrites/#rewriting-the-path
+  annotations:
+    konghq.com/methods: GET, OPTIONS
+    konghq.com/preserve-host: "true"
+    konghq.com/strip-path: "true"
+    kubernetes.io/ingress.class: kong
+spec:
+  #  ingressClassName: kong
+  rules:
+    - host: test-academic-administration.fbr.group
+      http:
+        paths:
+          - backend:
+              service:
+                name: sign-ups-service
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - test-academic-administration.fbr.group
+      secretName: wildcard-fbr-group-test
+status:
+  loadBalancer:
+    ingress:
+      - ip: 34.173.102.111

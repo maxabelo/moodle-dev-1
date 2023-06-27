@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: sign-ups-app
+  name: sign-ups-pod-local
+  namespace: academic-administration-local
+spec:
+  restartPolicy: Always
+  containers:
+  - name: sign-ups-pod-local
+    image: localhost:32000/sign-ups-app:latest
+    readinessProbe:
+      exec:
+        command: ["/bin/sh", "-c", "php /app/artisan queue:consume"]
+    ports:
+      - containerPort: 8080
+    securityContext:
+      capabilities:
+        add:
+          - SYS_PTRACE
+    envFrom:
+    - configMapRef:
+        name: sign-ups-app-config-local
+    - secretRef:
+        name: sign-ups-app-secret-local

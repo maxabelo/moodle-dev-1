@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: sign-ups-app
+  name: sign-ups-app-config-test
+  namespace: academic-administration-test
+data:
+  APP_NAME: "sign-ups"
+  APP_ENV: "local"
+  APP_KEY: "sign-ups-service-key"
+  APP_DEBUG: "true"
+  APP_TIMEZONE: "UTC"
+  APP_IMPORT_STUDENTS_DAYS_INTERVAL: "1"
+  #APP_IMPORT_STUDENTS_DATE: "2023-03-01"
+  APP_URL: "https://test-academic-administration.fbr.group"
+  CACHE_DRIVER: "file"
+  QUEUE_CONNECTION: "sync"
+  LOG_CHANNEL: "stdout"
+  ES_TYPE: "cloud"
+  ES_PREFIX: "academic-administration.sign-ups-beta."
+  ENQUEUE_MESSAGES_LIMIT: "100"
+  ENQUEUE_TIME_LIMIT: "10"
+  ENQUEUE_MEMORY_LIMIT: "50"
+

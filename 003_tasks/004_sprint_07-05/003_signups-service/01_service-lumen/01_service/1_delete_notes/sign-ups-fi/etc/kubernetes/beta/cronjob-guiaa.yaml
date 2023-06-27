@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: sign-ups-import-students-guiaa-test
+  namespace: academic-administration-test
+spec:
+  schedule: "0 2 * * *" #every day at 02:00
+  suspend: false
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      parallelism: 1
+      completions: 1
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: sign-ups-cronjob-test
+            image: PHP_IMAGE_NAME
+            envFrom:
+            - secretRef:
+                name: sign-ups-app-secret-test
+            - configMapRef:
+                name: sign-ups-app-config-test
+            args:
+            - /bin/sh
+            - -c
+            - php artisan import:students -s guiaa
+          restartPolicy: OnFailure

@@ -1,0 +1,572 @@
+asyncapi: 2.5.0
+
+#Info of the application
+info:
+  title: Students Sign-ups & Updates Microservice
+  version: '2.0'
+  description: Sign-ups & Students Updates Microservice
+  contact:
+    name: Academic Administration
+    email: ct.administracion.academica@funiber.org
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  development:
+    url: localhost:5672
+    protocol: amqp
+    description: Development RabbitMQ
+  beta:
+    url: academic-administration.fbr.group:5672
+    protocol: amqp
+    description: Beta RabbitMQ
+  production:
+    url: academic-administration.fbr.group:5672
+    protocol: amqp
+    description: Production RabbitMQ
+
+channels:
+  academic-administration.sign-ups.student_registered:
+    description: The topic on which measured values may be produced and consumed
+    publish:
+      summary: Inform about a new student registration in the system
+      operationId: StudentRegistered
+      message:
+        $ref: "#/components/messages/StudentRegistered"
+
+  academic-administration.sign-ups.student_signedup:
+    description: The topic on which measured values may be produced and consumed
+    publish:
+      description: Inform about a student signed up in the system
+      operationId: StudentSignedUp
+      message:
+        $ref: '#/components/messages/StudentSignedUp'
+
+  academic-administration.sign-ups.inscription_registered:
+    description: The topic on which measured values may be produced and consumed
+    publish:
+      description: Inform about a inscription registered in the system
+      operationId: InscriptionRegistered
+      message:
+        $ref: '#/components/messages/InscriptionSignedUp'
+
+components:
+  messages:
+    StudentRegistered:
+      name: StudentRegistered
+      title: Student signed up event
+      contentType: application/json
+      summary: Inform about a new student registration in the system
+      payload:
+        type: object
+        description: The student payload object holds all the data related to the signed-up student
+        properties:
+          uuid:
+            type: string
+            description: Unique ID for the Object
+          fired_at:
+            type: string
+            format: date-time
+            description: Date that the event was fired
+          student:
+            $ref: '#/components/schemas/StudentRegisteredPayload'
+
+    StudentSignedUp:
+      name: StudentSignedUp
+      title: Student updated event
+      summary: Inform about a student updated in the system
+      contentType: application/json
+      payload:
+        type: object
+        properties:
+          uuid:
+            type: string
+            description: Unique ID for the Object
+          fired_at:
+            type: string
+            format: date-time
+            description: Date that the event was fired
+          student:
+            $ref: '#/components/schemas/StudentSignedUpPayload'
+
+    InscriptionSignedUp:
+      name: InscriptionRegistered
+      title: Inscription signed up event
+      contentType: application/json
+      summary: Inform about a inscription registered in the system
+      payload:
+        type: object
+        properties:
+          uuid:
+            type: string
+            description: Unique ID for the Object
+          fired_at:
+            type: string
+            format: date-time
+            description: Date that the event was fired
+          inscription:
+            $ref: '#/components/schemas/InscriptionRegisteredPayload'
+
+
+
+  schemas:
+    StudentRegisteredPayload:
+      title: The Signed Up Student Object
+      type: object
+      description: The student object holds all the data related to the signed-up student
+      required:
+        - uuid
+        - dni
+        - user_name
+        - email
+        - language
+        - institution_abbreviation
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        dni:
+          type: string
+          description: National identity document.
+          example: 70361977D
+        first_name:
+          type: string
+          description: First Name
+        last_name:
+          type: string
+          description: Last Name
+        user_name:
+          type: string
+          description: Credential for the campus plattform
+        password:
+          type: string
+          description: The password for the Campus Plattform
+        email:
+          type: string
+          description: An Email Address
+          example: user_name@domain.com
+        country:
+          type: string
+          description: Country Name ISO 3166-1 alfa-2
+          example: EC
+        city:
+          type: string
+          description: City Name
+          example: Guayaquil
+        phone:
+          type: string
+          nullable: true
+          example: +593 994107391
+        address:
+          type: string
+          nullable: true
+          description: Main address
+          example: 7801 E Kenyon Dr
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        institution_abbreviation:
+          type: string
+          description: Current name of the institution facilitating the inscription under Funiber group's brand names
+          enum:
+            - FBR
+            - UEA
+            - UNIB
+            - UNINIMX
+            - UNINCOL
+            - UNIC
+            - UNIROMANA
+          example: FBR
+        created_at:
+          type: string
+          description: The created date
+          format: date-time
+        inscriptions:
+          type: array
+          description: An array of the unique ID's of the student's inscription
+          items:
+            type: object
+            properties:
+              uuid:
+                type: string
+                description: The unique ID of the inscription
+
+    StudentSignedUpPayload:
+      title: The signed up sudent object
+      type: object
+      description: The student object holds all the data related to the signed-up student
+      required:
+        - uuid
+        - dni
+        - user_name
+        - email
+        - language
+        - institution_abbreviation
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        dni:
+          type: string
+          description: National identity document.
+          example: 70361977D
+        first_name:
+          type: string
+          description: First Name
+        last_name:
+          type: string
+          description: Last Name
+        user_name:
+          type: string
+          description: Credential for the campus plattform
+        password:
+          type: string
+          description: The password for the Campus Plattform
+        email:
+          type: string
+          description: An Email Address
+          example: user_name@domain.com
+        country:
+          type: string
+          description: Country Name ISO 3166-1 alfa-2
+          example: EC
+        city:
+          type: string
+          description: City Name
+          example: Guayaquil
+        phone:
+          type: string
+          nullable: true
+          example: +593 994107391
+        address:
+          type: string
+          nullable: true
+          description: Main address
+          example: 7801 E Kenyon Dr
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        institution_abbreviation:
+          type: string
+          description: Current name of the institution facilitating the inscription under Funiber group's brand names
+          enum:
+            - FBR
+            - UEA
+            - UNIB
+            - UNINIMX
+            - UNINCOL
+            - UNIC
+            - UNIROMANA
+          example: FBR
+        created_at:
+          type: string
+          description: The created date
+          format: date-time
+        inscriptions:
+          type: array
+          description: An array of the student's inscriptions
+          items:
+            type: object
+            $ref: '#/components/schemas/InscriptionRegisteredPayload'
+
+    InscriptionRegisteredPayload:
+      title: The Inscription Payload
+      type: object
+      description: The Inscription Object contains all the information about a Student's record.
+      required:
+        - uuid
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        created_at:
+          type: string
+          description: The created date
+          format: date-time
+        registered_at:
+          type: string
+          format: date-time
+          description: Registered date
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        finished_at:
+          type: string
+          format: date-time
+          description: Finish Date
+        extension_finished_at:
+          type: string
+          format: date-time
+          description: End date of registration extension if granted.
+        status:
+          type: string
+          description: State in which the registration is located
+        incidence:
+          type: string
+          description: Incident related to registration status
+        academic_program:
+          description: Refers to the program in which the student is inscription
+          $ref: '#/components/schemas/ProgramPayload'
+        institution_abbreviation:
+          type: string
+          description: Current name of the institution facilitating the enrollment under Funiber group's brand names
+          example: FBR
+          enum:
+            - FBR
+            - UEA
+            - UNIB
+            - UNINIMX
+            - UNINCOL
+            - UNIC
+            - UNIROMANA
+        degrees:
+          type: array
+          description: The Degree Object has the basic information of a Degree in the Systems
+          items:
+            type: object
+            $ref: '#/components/schemas/DegreePayload'
+        modality:
+          type: string
+          description: Modality represents the study mode of the inscription
+          enum:
+            - VIRTUAL
+            - PRESENCIAL
+        active:
+          type: number
+          description: Enrollment status, if the status of the enrollment is different from 'Baja' the value will be 1
+          enum:
+            - 0
+            - 1
+          example: 1
+        enrollments:
+          type: array
+          description: The Enrollment Object contains all the information about a Student's record.
+          items:
+            type: object
+            $ref: '#/components/schemas/EnrollmentPayload'
+
+    EnrollmentPayload:
+      title: The Enrollment Object
+      type: object
+      description: The Enrollment Object contains all the information about a Student's record.
+      required:
+        - uuid
+        - language
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        updated_at:
+           type: string
+           format: date-time
+           description: updated date
+        academic_program:
+          description: Refers to the program in which the student is enrolled
+          $ref: '#/components/schemas/ProgramPayload'
+        academic_term:
+          $ref: '#/components/schemas/AcademicTermPayload'
+        academic_selections:
+          type: array
+          description: The Academic Selection has the basic information of a academic selection in the Systems
+          items:
+            type: object
+            $ref: '#/components/schemas/AcademicSelectionPayload'
+
+    AcademicSelectionPayload:
+      title: The Academic Selection Object
+      type: object
+      description: The Academic Selection has the basic information of a academic selection in the Systems
+      required:
+        - uuid
+      properties:
+        uuid:
+          type: string
+          description: Unique Academic Selection for the Object
+        reference_id:
+          type: string
+          description:  It is the unique identifier of the academic selection
+        admission_id:
+          type: string
+          description: It is the unique identifier of the admision
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        academic_element:
+          type: array
+          description: The Academic Element has the basic information of a academic element in the Systems
+          items:
+            type: object
+            $ref: '#/components/schemas/AcademicElementPayload'
+
+    AcademicElementPayload:
+      title: The Academic Element Object
+      type: object
+      description: The Academic Element has the basic information of a academic element in the Systems
+      required:
+        - uuid
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Academic Element Identifier
+        reference_class:
+          type: string
+          description: Class of the academic element
+          enum:
+            - AsignaturaVersion
+            - ProgramaVersion
+            - Actividad
+        reference_type:
+          type: string
+          description: Class type of the academic elementt
+          enum:
+            - _OBLIGATORIO
+            - _OPTATIVO
+            - _BASICA
+            - _TRABAJO_GRADO
+            - _PRACTICA_EXTERNA
+        type:
+          type: string
+          description: Type of academic element
+          enum:
+            - Program
+            - Subject
+            - Activity
+          example: Program
+        name:
+          type: string
+          description: The Element current name
+          example: Doctorado en educacion
+        abbreviation:
+          type: string
+          description: Abbreviation defined for the Element
+          example: DODE
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        version:
+          type: string
+          description: Version element academic
+          example: "DODE:2022-TD"
+
+    AcademicTermPayload:
+      title: The Academic Term Object
+      type: object
+      description: The academic term object contains all the information about the time periods to study.
+      required:
+        - uuid
+        - language
+      properties:
+        reference_id:
+          type: string
+          description: Internal Identifier for the object
+        school_period:
+          type: string
+          example: 2020 - 2021
+        study_model:
+          type: string
+          enum:
+            - _SEMESTRE
+            - _TRIMESTRE
+          example: _SEMESTRE
+          description: The study model of the object
+        started_at:
+          type: string
+          format: date-time
+          description: Start Date
+        finished_at:
+          type: string
+          format: date-time
+          description: Finish Date
+
+    ProgramPayload:
+      title: The Program Object
+      type: object
+      description: The Program Object has the basic information of a Program in the Systems
+      properties:
+        uuid:
+          type: string
+          description: Unique ID for the Object
+        reference_id:
+          type: string
+          description: Program Identifier
+        type:
+          type: string
+          description: Type of academic element
+          enum:
+            - Program
+            - Subject
+            - Activity
+          example: Program
+        abbreviation:
+          type: string
+          description: Abbreviation defined for the Program
+        language:
+          type: string
+          description: The default language of communication use of ISO 639-1 Code
+          example: es
+        name:
+          type: string
+          description: The Program current name
+        version:
+          type: string
+          description: The Program current version
+
+    DegreePayload:
+      title: The Degree Object
+      type: object
+      description: The Degree Object has the basic information of a Degree in the Systems
+      properties:
+        reference_id:
+          type: string
+          description: Degree Identifier
+        abbreviation:
+          type: string
+          description: Abbreviation of the institution facilitating the degree under Funiber group's brand names
+          example: UEA
+        status:
+          type: string
+          description: State in which the registration is located
+        incidence:
+          type: string
+          description: Incident related to registration status
+        active:
+          type: number
+          description: Degree status, if the status of the degree is different from 'No tramitar' the value will be 1
+          enum:
+            - 0
+            - 1
+          example: 1
+

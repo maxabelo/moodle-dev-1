@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sign-ups-app
+  name: sign-ups-consumer
+  namespace: academic-administration-local
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sign-ups-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        namespace: academic-administration-local
+        app: sign-ups-app
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: sign-ups-consumer
+          image: localhost:32000/sign-ups-app:latest
+          imagePullPolicy: Never
+          command:
+            - "/bin/sh"
+            - '-c'
+            - php /app/artisan queue:consume --message-limit=100 --time-limit=10 --memory-limit=50
+          ports:
+            - containerPort: 8080
+          securityContext:
+            capabilities:
+              add:
+                - SYS_PTRACE
+          envFrom:
+            - configMapRef:
+                name: sign-ups-app-config-local
+            - secretRef:
+                name: sign-ups-app-secret-local
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "100Mi"
+            limits:
+              cpu: "200m"
+              memory: "200Mi"

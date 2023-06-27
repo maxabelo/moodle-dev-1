@@ -1,0 +1,11 @@
+Dockerfile
+DockerfileDev
+README.md
+gcloud-deploy.sh
+gcloud-build.sh
+storage/logs
+*secrets.yml
+.env
+.env.example
+docker-compose-dev.yml
+docker-compose.yml

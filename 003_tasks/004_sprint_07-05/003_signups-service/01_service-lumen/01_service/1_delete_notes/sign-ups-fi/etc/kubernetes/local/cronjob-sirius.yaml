@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: sign-ups-import-students-sirius-local
+  namespace: academic-administration-local
+spec:
+  schedule: "0 0 * * *" #every day at 00:00
+  suspend: false
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      parallelism: 1
+      completions: 1
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - name: sign-ups-cronjob-local
+            image: localhost:32000/sign-ups-app:latest
+            envFrom:
+            - secretRef:
+                name: sign-ups-app-secret-local
+            - configMapRef:
+                name: sign-ups-app-config-local
+            args:
+            - /bin/sh
+            - -c
+            - php artisan import:students -s sirius
+          restartPolicy: OnFailure
