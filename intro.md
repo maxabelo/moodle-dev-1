@@ -332,3 +332,54 @@ http://localhost/campus
 
 
 
+
+
+
+
+
+
+<!-- SIRIUS SG -->
+
+
+<!-- 1 -->
+adrian.changalombo.no.fi2@funiber.org
+persona_id: 		5432733
+inscripcion_id:		262601
+AU - Arquitectura, Dis
+
+
+
+BT - Bioetica
+Master en Bioetica
+
+
+
+
+
+
+
+<!-- 2 -->
+adrian.changalombo.no.fi@funiber.org
+persona_id:			5432732
+inscripcion_id:		262603
+
+DE - Derfecho Politica
+Master en derecho y negocios internacionales
+
+
+
+
+
+
+
+adrian.changalombo4@funiber.org
+person_id:			5432734
+inscription_id:		262604
+
+Formacion Directores en TD
+
+
+
+
+
+

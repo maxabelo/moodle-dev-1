@@ -1,15 +1,13 @@
-node_module*
-z_data-volume*
-z_z-ignores*
-
-# laravel
 /.phpunit.cache
 /node_modules
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
-/*vendor*
+/vendor
+.env
+.env.backup
+.env.production
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -19,5 +17,3 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-
-003_tasks/004_sprint_07-05/003_signups-service/03_sirius-sg
