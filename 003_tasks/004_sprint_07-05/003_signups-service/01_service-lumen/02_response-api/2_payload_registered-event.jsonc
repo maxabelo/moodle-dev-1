@@ -1,0 +1,368 @@
+{
+	"uuid": "5462c999-50db-4cbe-9bf8-be04d731f38f",  // uuid del evento
+	"fired_at": "2023-06-27T20:12:33.653125Z",
+	"inscription": {
+	  "uuid": "fd76f81a-bdff-5d46-93f4-d6fcf5b93e1a", // http://localhost:8080/v2/sign-ups/inscriptions/{uuid}
+	  "reference_id": 258407,
+	  "language": "es",
+	  "created_at": "2023-06-27T20:12:33.649407Z",
+	  "registered_at": "2023-03-31T00:00:00.000000Z",
+	  "started_at": "2023-04-01T00:00:00.000000Z",
+	  "finished_at": "2025-04-01T00:00:00.000000Z",
+	  "extension_finished_at": "2025-04-01T00:00:00.000000Z",
+	  "status": "Activo",
+	  "incidence": "Al Día",
+	  "academic_program": {
+		"uuid": "ea6f29f6-dd18-5689-94a2-41ca20849b34",
+		"reference_id": 1222,
+		"type": "Program",
+		"abbreviation": "SPMSP",
+		"language": "es",
+		"name": "Máster en Salud Pública",
+		"version": "2021-TFC"
+	  },
+	  "institution_abbreviation": "FBR",
+	  "degrees": [
+		{
+		  "reference_id": 1478735,
+		  "abbreviation": "UEA",
+		  "status": "Creada",
+		  "incidence": " - ",
+		  "active": 1
+		}
+	  ],
+	  "modality": "VIRTUAL",
+	  "active": 1,
+	  "enrollments": [
+		{
+		  "uuid": "3091240e-98d8-5a51-b7c3-5171f9e4a628",
+		  "reference_id": 561623,
+		  "language": "es",
+		  "started_at": "2023-04-13T15:08:54.000000Z",
+		  "academic_program": {
+			"uuid": "ea6f29f6-dd18-5689-94a2-41ca20849b34",
+			"reference_id": 1222,
+			"type": "Program",
+			"abbreviation": "SPMSP",
+			"language": "es",
+			"name": "Máster en Salud Pública",
+			"version": "2021-TFC"
+		  },
+		  "academic_term": {
+			"reference_id": 1,
+			"school_period": "Funiber",
+			"study_model": "Abierto",
+			"started_at": "2023-04-01T00:00:00.000000Z",
+			"finished_at": "2025-04-01T00:00:00.000000Z"
+		  },
+		  "academic_selections": [
+			{
+			  "uuid": "53f41ad8-10ef-5198-9faa-2b061899a2dd",
+			  "reference_id": 422597,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "1f39d14c-b513-53e2-8b35-507ba6c4e0d5",
+				  "reference_id": 256217,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Contextualización de la salud pública",
+				  "abbreviation": "SP001",
+				  "language": null,
+				  "version": "SP001-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "268579f6-7070-5514-a1e3-1e38c07ee0dd",
+			  "reference_id": 422598,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "c4b9219a-739f-5b8c-a10b-8dedc0653f73",
+				  "reference_id": 256231,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Bioética general",
+				  "abbreviation": "BT009",
+				  "language": null,
+				  "version": "BT009-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "f41bd3dd-1ef4-5263-a3e3-14b03b48c1b6",
+			  "reference_id": 422599,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "7c925430-7049-5ed3-8d2a-d6d67f3f1670",
+				  "reference_id": 256245,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Determinantes sociales en salud",
+				  "abbreviation": "SP002",
+				  "language": null,
+				  "version": "SP002-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "9ce7022a-bf17-501f-8695-4ee3be90778f",
+			  "reference_id": 422600,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "a7e51896-5e01-59a7-8859-0bfc3b8cabcb",
+				  "reference_id": 256259,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Sistemas de Salud",
+				  "abbreviation": "DD1012",
+				  "language": null,
+				  "version": "DD1012-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "42efc44f-f427-5057-993f-4705ec559e17",
+			  "reference_id": 422601,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "071a7999-0f9f-5e54-b3b9-bb41ef7aec04",
+				  "reference_id": 256273,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Gestión de Servicios de Salud  ",
+				  "abbreviation": "DD1008",
+				  "language": null,
+				  "version": "DD1008-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "0509be63-d3c1-5d0d-90dc-df385b9792e5",
+			  "reference_id": 422602,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "dbc0a8e7-6fd1-5534-97a1-d70713b8d26b",
+				  "reference_id": 256287,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Demografía y salud pública",
+				  "abbreviation": "SP003",
+				  "language": null,
+				  "version": "SP003-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "e34ef0af-af1a-5f39-ba9b-c81e2e7a2a4b",
+			  "reference_id": 422603,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "23f0f317-b8ee-5104-91ad-4d0a3f0d3717",
+				  "reference_id": 256301,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Economía de la salud",
+				  "abbreviation": "DD1004",
+				  "language": null,
+				  "version": "DD1004-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "c7006cac-31f6-5fc2-90dc-ad0170237cb8",
+			  "reference_id": 422604,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "ab94421b-f8ad-56cb-8a51-1fa9437764ff",
+				  "reference_id": 256315,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Proceso salud-enfermedad y equidad",
+				  "abbreviation": "SP004",
+				  "language": null,
+				  "version": "SP004-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "21fa80e8-2baf-5301-a86e-7fe7878b8ead",
+			  "reference_id": 422605,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "1ef00b1d-2ba8-5c73-8610-a2bf5c8227bb",
+				  "reference_id": 256329,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Políticas de salud y protección social",
+				  "abbreviation": "SP005",
+				  "language": null,
+				  "version": "SP005-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "277aad75-61f3-571d-b472-04232d7ae46d",
+			  "reference_id": 422606,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "347f521c-5de8-5602-adee-4af0508b16aa",
+				  "reference_id": 256343,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Vigilancia de la salud pública",
+				  "abbreviation": "SP006",
+				  "language": null,
+				  "version": "SP006-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "39f14171-e8aa-581e-8bd2-bdfc2de598e5",
+			  "reference_id": 422607,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "422266d3-c1dd-518a-9b14-b91099fd4a63",
+				  "reference_id": 256357,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Diseño y evaluación de programas en salud pública",
+				  "abbreviation": "SP007",
+				  "language": null,
+				  "version": "SP007-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "badf8c6e-4c1a-5964-ae5b-66ccaaa18a8d",
+			  "reference_id": 422608,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "b72c238c-9be1-581b-bded-b0d69cadcf07",
+				  "reference_id": 256815,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Metodología de Investigación Científica",
+				  "abbreviation": "DO016",
+				  "language": null,
+				  "version": "DO016-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "9d908782-5ab0-52f5-8232-b3c33a19fc2f",
+			  "reference_id": 422609,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "b57bbcb9-f4e8-5280-a90a-26c2ce864e87",
+				  "reference_id": 256829,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Epidemiología I",
+				  "abbreviation": "SN1013",
+				  "language": null,
+				  "version": "SN1013-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "d6c4110e-d2bd-5a47-b5e2-65d5fc4780ef",
+			  "reference_id": 422610,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "b0bb1ea5-98c5-5f9d-a5b1-e9a6867dd4fc",
+				  "reference_id": 256843,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Epidemiología II",
+				  "abbreviation": "SN356",
+				  "language": null,
+				  "version": "SN356-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "e21671b3-1522-565f-ba22-3b915d13b465",
+			  "reference_id": 422611,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "541e98de-f943-5f00-ad6d-72d16b244163",
+				  "reference_id": 256857,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Estadística I",
+				  "abbreviation": "CSJ024",
+				  "language": null,
+				  "version": "CSJ024-vEA"
+				}
+			  ]
+			},
+			{
+			  "uuid": "23340030-1ceb-5950-9196-473f9da64518",
+			  "reference_id": 422612,
+			  "admission_id": 261512,
+			  "started_at": "2023-04-13T00:00:00.000000Z",
+			  "academic_element": [
+				{
+				  "uuid": "131787b2-b448-578d-947b-bb1cc6b00461",
+				  "reference_id": 256871,
+				  "reference_class": "AsignaturaVersion",
+				  "reference_type": "_OBLIGATORIO",
+				  "type": "Subject",
+				  "name": "Seminario Salud PF",
+				  "abbreviation": "SN331",
+				  "language": null,
+				  "version": "SN331-vEA"
+				}
+			  ]
+			}
+		  ]
+		}
+	  ]
+	}
+  }
+  
