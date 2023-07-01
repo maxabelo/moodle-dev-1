@@ -383,3 +383,17 @@ Formacion Directores en TD
 
 
 
+
+
+### PRO TIP
+  -- Cambiar de Repositorio de GitHub manteniendo los commits
+    - Cambiar el Remoto de GitHub:
+
+```bash
+git remote set-url origin <URL del nuevo repositorio>
+
+git remote -v
+
+git push -u origin main
+```
+
