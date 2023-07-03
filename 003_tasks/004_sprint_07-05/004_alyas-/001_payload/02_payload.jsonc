@@ -1,0 +1,30 @@
+{
+  "app_id": "teaching-action.moodle",
+  "uuid": "string",
+  "fired_at": "2023-06-29T11:53:43Z",
+  "student": {
+    "uuid": "v4()",
+    "reference_id": "string",
+    "user_name": "string",
+    "email": "string"
+  },
+  "institution": {
+    "uuid": "v4()",
+    "abbreviation": "",
+    "modality": "string",
+    "domain": "string"
+  },
+  "inscription": {
+    "uuid": "v4()",
+    "created_at": "string",
+    "registered_at": "string",
+    "started_at": "string",
+    "finished_at": "string",
+    "status": "string",
+    "modality": "string"
+  },
+  "campus": {
+    "abbreviation": "string",
+    "url": "string"
+  }
+}
