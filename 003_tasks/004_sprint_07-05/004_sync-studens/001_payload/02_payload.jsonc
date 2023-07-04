@@ -1,0 +1,30 @@
+{
+  "app_id": "teaching-action.moodle",
+  "uuid": "string",
+  "fired_at": "2023-06-29T11:53:43Z",
+  "student": {
+    "uuid": "v4()", // sg - aa
+    "reference_id": "string", // sg - aa: persona_id Sirius
+    "user_name": "string", // sg - aa
+    "email": "string" // sg - aa
+  },
+  "institution": {
+    "uuid": "v4()", // brand
+    "abbreviation": "", // sg - aa
+    "modality": "string", // service db - organization
+    "domain": "string" // brand
+  },
+  "inscription": {
+    "uuid": "v4()", // sg - aa
+    "created_at": "string", // sg - aa
+    "registered_at": "string", // sg - aa
+    "started_at": "string", // sg - aa
+    "finished_at": "string", // sg - aa
+    "status": "string", // sg - aa
+    "modality": "string" // sg - aa
+  },
+  "campus": {
+    "abbreviation": "string", // service db - organization
+    "url": "string" // service db - organization
+  }
+}

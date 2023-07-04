@@ -1,0 +1,37 @@
+{
+    "app_id": "teaching-action.students-academic-synchronization",
+    "uuid": "string",
+    "fired_at": "2023-06-04T20:53:00.344001Z",
+    "student": {
+        "uuid": "v4()", // sg - aa
+        "reference_id": "string", // sg - aa: persona id sirius
+        "username": "string", // sg - aa  user_name
+        "email": "string" // sg - aa
+    },
+    "institution": {
+        "uuid": "v4()", // brand
+        "abbreviation": "", // sg - aa
+        "modality": "string", // service db - organization
+        "domain": "string" // brand
+    },
+    "inscription": {
+        "uuid": "v4()", // sg - aa
+        "created_at": "2023-06-04T20:53:00.310306Z", // sg - aa
+        "registered_at": "2023-06-04T00:00:00.000000Z", // sg - aa
+        "started_at": "2023-06-04T00:00:00.000000Z", // sg - aa
+        "finished_at": "2025-06-04T00:00:00.000000Z", // sg - aa
+        "status": "string", // sg - aa
+        "modality": "string" // sg - aa
+    },
+    "campus": {
+        "uuid": "b634f634-947b-49fe-b966-54f69803519a",
+        "name": "EVA - Universidad Internacional Iberoamericana",
+        "abbreviation": "EVA_UNIB",
+        "domain": "betacampus.unib.org",
+        "website": "https://betacampus.unib.org",
+        "environment": "beta",
+        "modality": "virtual"
+    }
+}
+
+// teaching-action.students-academic-synchronization.student_enrolled
